@@ -1,0 +1,80 @@
+####STEP 1####
+
+# guessed_number = int(input("Guess a number: "))
+
+# number_to_guess = 5
+
+# while guessed_number != number_to_guess:
+#     print("Nope!")
+#     guessed_number = int(input("Guess again: "))
+# print("You got it!")
+
+
+
+
+
+####STEP 2####
+
+# guessed_number = int(input("Guess a number: "))
+
+# number_to_guess = 5
+
+# while guessed_number != number_to_guess:
+#     if guessed_number < number_to_guess:
+#         print("Too Low")
+#         guessed_number = int(input("Guess again: "))
+#     elif guessed_number > number_to_guess:
+#         print("Too high")
+#         guessed_number = int(input("Guess again: "))
+# print("You got it!")
+
+
+
+
+####STEP 3####
+
+# guessed_number = int(input("Guess a number: "))
+
+# import random 
+# number_to_guess = random.randint(1, 10)
+
+# while guessed_number != number_to_guess:
+#     if guessed_number < number_to_guess:
+#         print("Too Low")
+#         guessed_number = int(input("Guess again: "))
+#     elif guessed_number > number_to_guess:
+#         print("Too high")
+#         guessed_number = int(input("Guess again: "))
+# print("You got it!")
+
+
+
+
+
+
+####STEP 4####
+guessed_number = int(input("Guess a number: "))
+
+import random 
+number_to_guess = random.randint(1, 10)
+
+count = 0
+while guessed_number != number_to_guess:
+    if count == 5:
+        print("Out of turns! Man, you suck at this game.")
+        break
+    elif guessed_number < number_to_guess:
+        count = count + 1
+        print("Too low. You have " + str(5 - count) + " turns left.")
+        guessed_number = int(input("Guess again: "))
+    elif guessed_number > number_to_guess:
+        print("Too high")
+        count = count + 1
+        guessed_number = int(input("Guess again: "))
+
+print("You got it!!")
+
+
+
+
+
