@@ -235,78 +235,100 @@
 
 
 
+##### BONUS CHALLENGE #####
+word_histogram = {}
+paragraph = "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take arms against a sea of troubles And by opposing end them."
+paragraph = paragraph.lower()
+paragraph = paragraph.split()
+
+for word in paragraph:
+    if word_histogram.get(word) == None:
+        word_histogram[word] = 1
+    else:
+        word_histogram[word] += 1
+
+# print(word_histogram)
+
+word_list = []
+for key in word_histogram:
+    word_list.append(key)
+print(word_list)
+
+
+
+
+
 
 
 ########### PHONE BOOK #############
 
-phonebook = {
-    "Alfie": "111-111-1111",
-    "Bart": "222-222-2222",
-    "Charlie": "333-333-3333",
-    "Dante": "444-444-4444",
-    "Enrique": "555-555-5555"
-}
+# phonebook = {
+#     "Alfie": "111-111-1111",
+#     "Bart": "222-222-2222",
+#     "Charlie": "333-333-3333",
+#     "Dante": "444-444-4444",
+#     "Enrique": "555-555-5555"
+# }
 
-menu_text = """
-Electronic Phone Book 
-===================== 
-1. Look up an entry 
-2. Set an entry 
-3. Delete an entry 
-4. List all entries 
-5. Quit
+# menu_text = """
+# Electronic Phone Book 
+# ===================== 
+# 1. Look up an entry 
+# 2. Set an entry 
+# 3. Delete an entry 
+# 4. List all entries 
+# 5. Quit
 
-Enter a number 1-5.
-"""
-
-
-# input("choose 1-5: ")
+# Enter a number 1-5.
+# """
 
 
-#Look Up An Entry#
-def lookup():
-    search_name = input("Enter name to look up: ")
-    search_number = phonebook[search_name]
-    print("{}'s phone number is {}.".format(search_name, search_number))
+# # input("choose 1-5: ")
 
 
-#Set an Entry#
-def set_entry():
-    name_to_enter = input("Enter name to add: ")
-    number_to_enter = input("Enter {}'s phone number: ".format(name_to_enter))
-    phonebook[name_to_enter] = number_to_enter
-    print("{}'s number has been added to your phonebook.".format(name_to_enter))
-
-#Delete an Entry#
-def delete_entry():
-    name_to_delete = input("Which entry would you like to delete? ")
-    del phonebook[name_to_delete]
-    print('{} has been deleted from your phonebook.'.format(name_to_delete))
-    print(phonebook)
-
-#List All Entries#
-def all_entries():
-    print("Here are all of your phonebook entries: ")
-    for key, value in phonebook.items():
-        print(key)
-        print(value)
-
-#Quit#
-def quit():
-    print("Goodbye!")
+# #Look Up An Entry#
+# def lookup():
+#     search_name = input("Enter name to look up: ")
+#     search_number = phonebook[search_name]
+#     print("{}'s phone number is {}.".format(search_name, search_number))
 
 
+# #Set an Entry#
+# def set_entry():
+#     name_to_enter = input("Enter name to add: ")
+#     number_to_enter = input("Enter {}'s phone number: ".format(name_to_enter))
+#     phonebook[name_to_enter] = number_to_enter
+#     print("{}'s number has been added to your phonebook.".format(name_to_enter))
 
-choice = input(menu_text)
-if choice == "1":
-    lookup()
-if choice == "2":
-    set_entry()
-if choice == "3":
-    delete_entry
-if choice == "4":
-    all_entries()
-if choice == "5":
-    quit()
+# #Delete an Entry#
+# def delete_entry():
+#     name_to_delete = input("Which entry would you like to delete? ")
+#     del phonebook[name_to_delete]
+#     print('{} has been deleted from your phonebook.'.format(name_to_delete))
+#     print(phonebook)
 
+# #List All Entries#
+# def all_entries():
+#     print("Here are all of your phonebook entries: ")
+#     for key, value in phonebook.items():
+#         print(key)
+#         print(value)
+
+# #Quit#
+# def quit():
+#     print("Goodbye!")
+
+
+
+# choice = input(menu_text)
+# if choice == "1":
+#     lookup()
+# if choice == "2":
+#     set_entry()
+# if choice == "3":
+#     delete_entry
+# if choice == "4":
+#     all_entries()
+# if choice == "5":
+#     quit()
 
