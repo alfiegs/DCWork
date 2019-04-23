@@ -236,26 +236,6 @@
 
 
 ##### BONUS CHALLENGE #####
-word_histogram = {}
-paragraph = "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take arms against a sea of troubles And by opposing end them."
-paragraph = paragraph.lower()
-paragraph = paragraph.split()
-
-for word in paragraph:
-    if word_histogram.get(word) == None:
-        word_histogram[word] = 1
-    else:
-        word_histogram[word] += 1
-
-# print(word_histogram)
-
-word_list = []
-for key in word_histogram:
-    word_list.append(key)
-print(word_list)
-
-
-
 
 
 
