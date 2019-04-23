@@ -294,49 +294,49 @@ Enter a number 1-5.
 
 
 #Look Up An Entry#
-def lookup():
-    search_name = input("Enter name to look up: ")
-    search_number = phonebook[search_name]
-    print("{}'s phone number is {}.".format(search_name, search_number))
+# def lookup():
+#     search_name = input("Enter name to look up: ")
+#     search_number = phonebook[search_name]
+#     print("{}'s phone number is {}.".format(search_name, search_number))
 
 
-#Set an Entry#
-def set_entry():
-    name_to_enter = input("Enter name to add: ")
-    number_to_enter = input("Enter {}'s phone number: ".format(name_to_enter))
-    phonebook[name_to_enter] = number_to_enter
-    print("{}'s number has been added to your phonebook.".format(name_to_enter))
+# #Set an Entry#
+# def set_entry():
+#     name_to_enter = input("Enter name to add: ")
+#     number_to_enter = input("Enter {}'s phone number: ".format(name_to_enter))
+#     phonebook[name_to_enter] = number_to_enter
+#     print("{}'s number has been added to your phonebook.".format(name_to_enter))
 
-#Delete an Entry#
-def delete_entry():
-    name_to_delete = input("Which entry would you like to delete? ")
-    del phonebook[name_to_delete]
-    print('{} has been deleted from your phonebook.'.format(name_to_delete))
-    print(phonebook)
+# #Delete an Entry#
+# def delete_entry():
+#     name_to_delete = input("Which entry would you like to delete? ")
+#     del phonebook[name_to_delete]
+#     print('{} has been deleted from your phonebook.'.format(name_to_delete))
+#     print(phonebook)
 
-#List All Entries#
-def all_entries():
-    print("Here are all of your phonebook entries: ")
-    for key, value in phonebook.items():
-        print(key)
-        print(value)
+# #List All Entries#
+# def all_entries():
+#     print("Here are all of your phonebook entries: ")
+#     for key, value in phonebook.items():
+#         print(key)
+#         print(value)
 
-#Quit#
-def quit():
-    print("Goodbye!")
+# #Quit#
+# def quit():
+#     print("Goodbye!")
 
 
 
-choice = input(menu_text)
-if choice == "1":
-    lookup()
-if choice == "2":
-    set_entry()
-if choice == "3":
-    delete_entry
-if choice == "4":
-    all_entries()
-if choice == "5":
-    quit()
+# choice = input(menu_text)
+# if choice == "1":
+#     lookup()
+# if choice == "2":
+#     set_entry()
+# if choice == "3":
+#     delete_entry
+# if choice == "4":
+#     all_entries()
+# if choice == "5":
+#     quit()
 
 
