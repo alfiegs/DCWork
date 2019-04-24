@@ -137,13 +137,15 @@
 ######## CAR ########
 
 # class Car(object):
+
+
 #     def __init__(self, make, model, color):
 #         self.make = make
 #         self.model = model
 #         self.color = color
 #         self.door_status = 'closed'
 #         print(f"make: {self.make}, model: {self.model}, color: {self.color}")
-
+    
 #     def change_color(self, new_color):
 #         self.color = new_color
 #         return (self.color)
@@ -153,7 +155,6 @@
 
 #     def display_color(self):
 #         print(f"The color of your {self.make} is {self.color}")
-
 
 
 
@@ -189,35 +190,149 @@
 
 #################################################
 
-import datetime # we will use this for date objects
-class Person:
-    def __init__(self, name, surname, birthdate, address, telephone, email):
-        self.name = name
-        self.surname = surname
-        self.birthdate = birthdate
-        self.address = address
-        self.telephone = telephone
-        self.email = email
-    def age(self):
-        today = datetime.date.today()
+# import datetime # we will use this for date objects
+# class Person:
+#     def __init__(self, name, surname, birthdate, address, telephone, email):
+#         self.name = name
+#         self.surname = surname
+#         self.birthdate = birthdate
+#         self.address = address
+#         self.telephone = telephone
+#         self.email = email
+#     def age(self):
+#         today = datetime.date.today()
 
-        age = today.year - self.birthdate.year
+#         age = today.year - self.birthdate.year
 
-        if today < datetime.date(today.year, self.birthdate.month, 
-        self.birthdate.day):
-            age -= 1
-        return age
+#         if today < datetime.date(today.year, self.birthdate.month, 
+#         self.birthdate.day):
+#             age -= 1
+#         return age
 
 
-person = Person(
-    "Jane",
-    "Doe",
-    datetime.date(1992, 3, 12), # year, month, day
-    "No. 12 Short Street, Greenville",
-    "555 456 0987",
-    "jane.doe@example.com"
-)
+# person = Person(
+#     "Jane",
+#     "Doe",
+#     datetime.date(1992, 3, 12), # year, month, day
+#     "No. 12 Short Street, Greenville",
+#     "555 456 0987",
+#     "jane.doe@example.com"
+# )
 
-print(person.name)
-print(person.email)
-print(person.age())
+# print(person.name)
+# print(person.email)
+# print(person.age())
+
+
+
+
+
+
+
+
+
+
+
+
+
+##### INSTANTIATION #####
+
+# class Animal:
+#     def __init__ (self, name):
+#         self.name = name
+
+#     def fourlegs(self):
+#         print('I have four legs')
+
+
+# class Dog(Animal):
+#     def woof(self):
+#         print('woof')
+
+# puppy = Dog('pickle')
+# print(puppy.name)
+# puppy.woof()
+
+# puppy2 = Dog('henry')
+# print(puppy2.name)
+
+# class Cat(Animal):
+#     def meow(self):
+#         print('meow')
+
+# cat = Cat('misty')
+# cat2 = Cat('bubbles')
+
+# print(cat.name)
+# print(cat2.name)
+
+# cat.meow()
+
+# cat.fourlegs()
+# puppy.fourlegs()
+
+
+
+
+class Car(object):
+
+
+    def __init__(self, make, model, color):
+        self.make = make
+        self.model = model
+        self.color = color
+        self.door_status = 'closed'
+        print(f"make: {self.make}, model: {self.model}, color: {self.color}")
+    
+    def change_color(self, new_color):
+        self.color = new_color
+        return (self.color)
+    
+    def open_door(self):
+        self.door_status = 'open' 
+
+    def display_color(self):
+        print(f"The color of your {self.make} is {self.color}")
+
+    def override(self):
+        print('override of car class')
+
+    def altered(self):
+        print('altered of car class')
+
+#######INHERIT CAR CLASS#######
+class ElectricCar(Car):
+
+    def printCarType(self):
+        print('Im an electric car')
+
+    def override(self):
+        print('override of x class')
+    
+    def altered(self):
+        print('BEFORE altered of electric car class')
+        super(ElectricCar, self).alered()
+
+
+class HybridCar(Car):
+
+    def printCarType(self):
+        print('Im a hybrid')
+
+
+ec = ElectricCar('Tesla', 'S', 'red')
+ec.printCarType()
+ec.override()
+ec.altered()
+
+# toyota = Car("toyota", "prius", "green")
+# honda = Car('honda', 'civic', 'purple')
+# jeep = Car('jeep', 'wrangler', 'white')
+# f150 = Car('ford', 'f150', 'marble')
+
+# f150.change_color('midnight red')
+# f150.display_color()
+
+# fleet = [toyota, honda, jeep, f150]
+# for x in fleet:
+#     print(x.display_color())
