@@ -23,7 +23,7 @@ class Person:
     def greet(self, other_person): 
         print('Hello {}, I am {}!'.format(other_person.name, self.name))
         self.greeting_count += 1
-        self.unique_greets.append(friend.name)
+        self.unique_greets.append(other_person.name)
 
     def print_contact(self):
         print(f'{self.name}\'s email is {self.email} and phone number is {self.phone}.')
@@ -67,20 +67,20 @@ jordan = Person('Jordan', 'jordan@aol.com', '495-586-3456')
 
 
 #Add a Friend
-# sonny.add_friend(jordan)
-# jordan.add_friend(sonny)
+sonny.add_friend(jordan)
+jordan.add_friend(sonny)
 
 
 #Get number of friends
-# sonny.friends_number()
+sonny.friends_number()
 
 
 #Count Greetings
-sonny.greet(jordan)
-sonny.greet(jordan)
-sonny.greet(jordan)
+# sonny.greet(jordan)
+# sonny.greet(jordan)
+# sonny.greet(jordan)
 
-jordan.greet(sonny)
+# jordan.greet(sonny)
 
 # print(sonny.greeting_count)
 # print(jordan.greeting_count)
@@ -91,8 +91,10 @@ jordan.greet(sonny)
 # print(jordan)
 
 
+print(__str__(jordan.name))
+
 #Bonus
-sonny.num_unique_people_greeted()
+# sonny.num_unique_people_greeted()
 
 
 
