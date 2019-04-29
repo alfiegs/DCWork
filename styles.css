@@ -1,0 +1,35 @@
+a{
+    color: red;
+    font-size: 40px;
+}
+
+div{
+    background-color:olive
+}
+
+p{
+    background-color: yellow
+}
+
+h1{
+    color: green;
+    font-size: 70px;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace
+}
+
+ol > li{
+    background-color: orange
+}
+
+#myDiv{
+    color: blue; 
+    font-weight: bold;
+    background-color: red;
+}
+
+body{
+    margin: 0
+}

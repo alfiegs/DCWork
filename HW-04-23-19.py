@@ -91,7 +91,6 @@ sonny.friends_number()
 # print(jordan)
 
 
-print(__str__(jordan.name))
 
 #Bonus
 # sonny.num_unique_people_greeted()
