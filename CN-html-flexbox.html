@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <style>
+        .box {
+            background-color: tomato;
+            color: white;
+            font-weight: bold;
+            margin: 5px;
+            font-size: 30px;
+            width: 25vw;
+            /* display: inline-block;
+            text-align: center;
+            line-height: 200px; */
+
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: gray;
+            align-items: center;
+            /* flex-wrap: wrap; */
+
+        }
+
+        .order1{
+            order: 1;
+        }
+
+        .order2 {
+            order: 2;
+        }
+    
+        .order3 {
+            order: 3;
+        }
+
+        .fg1{
+            flex-grow: 1;
+        }
+
+        .fg2{
+            flex-grow: 2;
+        }
+
+        .fg3{
+            flex-grow: 3;
+        }
+
+        .h1 {
+            height: 150px;
+        }
+        .h2 {
+            height: 200px;
+        }
+        .h3 {
+            height: 250px;
+        }
+        .h4 {
+            height: 300px;
+        }
+
+
+        .alignSelf {
+            align-self: flex-start;
+        }
+
+    </style>
+</head>
+<body style="margin: 0">
+    
+    <div class="container">
+        <div class="box fg1 h1 alignSelf">1</div>
+        <div class="box fg2 h2">2</div>
+        <div class="box fg3 h3">3</div>
+        <div class="box h3">3</div>
+        <div class="box h3">3</div>
+        <div class="box h3">3</div>
+        <div class="box h3">3</div>
+
+
+    </div>
+
+
+
+
+</body>
+</html>

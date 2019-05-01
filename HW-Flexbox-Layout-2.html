@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flexbox Layout 2</title>
+    <style>
+    .container{
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: gray;
+    }
+
+    .header{
+        color: white;
+        background-color:  rgb(49, 48, 48);
+        height: 10vh;
+        text-align: center;
+    }
+
+    .bodyContainer{
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        background-color: white;
+        flex-grow: 1;
+        justify-content: space-around;
+        padding: 15px 0px 15px 0px;
+
+    }
+
+    .column1{
+        color: black;
+        background-color: lightblue;
+        width: 300px;
+        padding: 20px;
+    }
+    .column2{
+        color: black;
+        background-color: rgb(136, 177, 136);
+        width: 1000px;touc
+        padding: 20px;
+    }
+    .footer{
+        color: white;
+        background-color: rgb(49, 48, 48);
+        height: 10vh;
+        text-align: center;
+    }
+
+
+    </style>
+
+
+
+
+</head>
+
+<body style="margin: 0">
+
+    <div class='container'>
+    
+        <div class="header">
+            Flexbox Layout 2
+        </div>
+    
+        <div class='bodyContainer'>
+            <div class="column1">
+                <p>COLUMN 1</p>
+                <br>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic quibusdam, sapiente at natus suscipit, ad, maiores eveniet reprehenderit eligendi est quos enim cum! Magni quod explicabo temporibus officia, sunt asperiores.
+            </div>
+        
+    
+    
+            <div class="column2">
+                <p>COLUMN 2</p>
+                <br>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque ipsam, soluta sint quod aspernatur veritatis debitis ad commodi sunt dicta in adipisci quis quidem ipsa, consectetur delectus? A, perspiciatis hic!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis hic accusamus ipsam illum inventore, asperiores consectetur, quasi iure est officiis reprehenderit incidunt, impedit sed obcaecati! Temporibus, suscipit non! Maxime, adipisci.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi accusantium explicabo omnis consequatur eius pariatur eligendi sint molestiae officiis harum natus a eum iusto, mollitia maxime distinctio illo sapiente laborum!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis aspernatur non quaerat soluta praesentium. Nostrum eos quasi nisi illum odit. Ipsa consequatur officia quam ab dolorem mollitia quas fugiat itaque.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero asperiores eos enim, atque veniam alias ea commodi natus eius, consequatur libero, similique temporibus unde suscipit perferendis dolores in. Maxime, tempore.
+            </div>
+        </div>
+
+        <div class="footer">
+            Footer
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+</html>
