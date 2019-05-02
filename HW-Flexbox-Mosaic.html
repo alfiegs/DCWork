@@ -9,7 +9,8 @@
     <style>
 
     div {
-        border: 2px black solid;
+        border: 2px rgb(26, 25, 25) solid;
+        box-sizing: border-box;
     }
 
     .container{
@@ -36,6 +37,7 @@
         display: flex;
         background-color: yellow;
         flex-grow: 1;
+        flex-direction: column;
     }
 
     .box1{
@@ -101,6 +103,17 @@
     .fg2{
         flex-grow: 2;
     }
+
+    .fg3{
+        flex-grow: 3;
+    }
+
+    .fg4{
+        flex-grow: 4;
+    }
+
+
+
     </style>
 
 
@@ -115,11 +128,58 @@
 
 
     <div class='container'>
-        <div class='column1'>
-            1
+        <!-- COLUMN 1 -->
+        <div class='columnBox fg1'>
+            <!-- TOP BOX OF COLUMN 1 -->
+            <div class='columnBox fg1' style="border: none">
+                <!-- TOP ROW OF TOP BOX OF COLUMN 1 -->
+                <div class='rowBox fg1'>
+                    <div class='fg1 white'></div>
+                    <div class='fg2 white'></div>
+                </div>
+                <!-- MIDDLE ROW OF TOP BOX OF COLUMN 1 -->
+                <div class='rowBox fg2' style="border: none">
+                    <div class='fg1 white'></div>
+                    <div class='fg4 red' style="border-width: 2px 2px 0px 2px"></div>
+                </div>
+                <!-- BOTTOM ROW OF TOP BOX OF COLUMN 1 -->
+                <div class='rowBox fg2' style="border: none">
+                    <div class='fg1 white' style="border: none"></div>
+                    <div class='fg4 red' style="border-width: 0px 2px 2px 2px"></div>
+                </div>
+            </div>
+            <!-- BOTTOM BOX OF COLUMN 2 -->
+            <div class='rowBox fg1' style="border: none">
+                <!-- LEFT COLUMN OF BOTTOM BOX OF COLUMN 1 -->
+                <div class='columnBox fg1'>
+                    <div class='fg1 white' style="border: none"></div>
+                    <div class='fg3 yellow'></div>
+                    <div class='fg1 white'></div>
+                </div>
+                <!-- LEFT COLUMN OF BOTTOM BOX OF COLUMN 1 -->
+                <div class='columnBox fg2'>
+                    <div class='fg2 black'></div>
+                    <div class='fg2 white'></div>
+                    <div class='fg1 white'></div>
+                </div>
+                <!-- LEFT COLUMN OF BOTTOM BOX OF COLUMN 1 -->
+                <div class='columnBox fg2'>
+                    <div class='fg1 white'></div>
+                    <div class='fg1 white'></div>
+                    <div class='fg1 black'></div>
+                    <div class='rowBox fg2 white'>
+                        <div class='fg1 yellow'></div>
+                        <div class='fg1 white'></div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!-- COLUMN 2 -->
         <div class='column2'>
+            <!-- TOP BOX OF COLUMN 2 -->
             <div class='box1'>
+                <!-- LEFT COLUMN OF TOP BOX OF COLUMN 2 -->
                 <div class='box1-1'>
                     <div style="flex-grow: 1; background-color: yellow;"></div>
                     <div style="flex-grow: 2; background-color: yellow;"></div>
@@ -127,28 +187,23 @@
                         <div class='fg1'></div>
                         <div class='fg1'></div>
                     </div>
-
-
                 </div>
+                <!-- RIGHT COLUMN OF TOP BOX OF COLUMN 2 -->
                 <div class='box1-2'>
                     <div style="flex-grow: 2; background-color: blue;"></div>
                     <div style="flex-grow: 2; background-color: red;"></div>
                     <div style="flex-grow: 1; background-color: white;"></div>
                 </div>
-
-
-
             </div>
-
+            <!-- BOTTOM BOX OF COLUMN 2 -->
             <div class='box2'>
-                <!-- COLUMN 1 -->
+                <!-- LEFT COLUMN OF BOTTOM BOX OF COLUMN 2 -->
                 <div class="columnBox fg1">
                     <div class='white fg1'></div>
                     <div class='blue fg2'></div>
                     <div class='red fg2'></div>
                 </div>
-
-                <!-- COLUMN 2 -->
+                <!-- RIGHT COLUMN OF BOTTOM BOX OF COLUMN 2 -->
                 <div class='columnBox fg1'>
                     <div class='rowBox white fg2'>
                         <div class='white fg1'></div>
@@ -158,36 +213,70 @@
                     <div class='rowBox white fg1'>
                         <div class='white fg1'></div>
                         <div class='black fg1'></div>
-
                     </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- COLUMN 3 -->
+        <div class='columnBox fg1'>
+            <!-- TOP BOX OF COLUMN 3 -->
+            <div class='rowBox fg1'>
+                <!-- LEFT COLUMN OF TOP BOX OF COLUMN 3 -->
+                <div class='columnBox fg2'>
+                    <div class='rowBox fg1 yellow'>
+                        <div class='fg1 yellow'></div>
+                        <div class='fg1 black'></div>
+                    </div>
+                    <div class='fg1 yellow'></div>
+                    <div class='fg1 black'></div>
+                    <div class='fg1 white'></div>
+                    <div class='fg1 white'></div>
+                </div>
+                <!-- MIDDLE COLUMN OF TOP BOX OF COLUMN 3 -->
+                <div class='columnBox fg2'>
+                    <div class='fg1 white'></div>
+                    <div class='fg2 white'></div>
+                    <div class='fg2 black'></div>
+                </div>
+                <!-- RIGHT COLUMN OF TOP BOX OF COLUMN 3 -->
+                <div class='columnBox fg1'>
+                    <div class='fg1 white'></div>
+                    <div class='fg3 yellow'></div>
+                    <div class='fg1 white'></div>
+                </div>
+            </div>
+
+            <!-- BOTTOM BOX OF COLUMN 3 -->
+            <div class='columnBox fg1'>
+                <!-- TOP ROW OF BOTTOM BOX OF COLUMN 3 -->
+                <div class='rowBox fg2'>
+                        <div class='fg4 blue'></div>
+                        <div class='fg1 white'></div>
+                </div>
+                <!-- MIDDLE ROW OF BOTTOM BOX OF COLUMN 3 -->
+                <div class='rowBox fg2'>
+                    <div class='fg4 blue'></div>
+                    <div class='fg1 white'></div>
+
+                </div>
+                <!-- BOTTOM ROW OF BOTTOM BOX OF COLUMN 3 -->
+                <div class='rowBox fg1'>
+                    <div class='fg2 white'></div>
+                    <div class='fg1 white'></div>
 
                 </div>
 
-
-
-
-
-
             </div>
 
-
-
-
-
-
-
+        
         </div>
 
-
-
-
-
-
-
-        <div class='column3'>
-            3
-        </div>
-    </div>
 
 
 
