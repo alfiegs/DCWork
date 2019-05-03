@@ -34,3 +34,8 @@
 #How can you remove 1 fruit from 1 box and correct the labels?
 
 #Remove one from mixed. Because mixed is mislabeled, you know that whatever you choose from the mixed box should be the box's true label. Then you just switch the other two labels.  
+
+
+
+
+
