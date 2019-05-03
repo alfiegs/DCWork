@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .containerWidth {
+            width: 60vw;
+        }
+
+        .gray {
+            background-color: rgb(212, 209, 209);
+        }
+
+        .green{
+            background-color: green;
+        }
+
+        .width80 {
+            width: 80vw;
+        }
+
+        .width20 {
+            width: 20vw;
+        }
+
+        .height20px {
+            height: 20px;
+        }
+
+        .height100px{
+            height: 100px;
+        }
+
+        .center {
+            align-items: center;
+        }
+
+        .padding{
+            padding: 20px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="green">
+        <div class="container containerWidth gray padding">
+            <div>Alfie's Friendship Form</div>
+            <br>
+            <form>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Name</label>
+                        <br>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Type in me!">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Occupation</label>
+                        <br>
+                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Click me!">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Reason for friendship request</label>
+                        <br>
+                        <input type="text" class="form-control width20 height100px" id="formGroupExampleInput2" placeholder="Oh boy, I can't wait for you to type in me!">
+                    </div>
+                    <br>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <div style="text-align: center">Radio Button Quiz!</div>
+                        <br>
+                        <legend class="col-form-label col-sm-2 pt-0">Why are radio buttons called radio buttons???</legend>
+                        <div class="col-sm-10">
+                            <br>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"
+                                    checked>
+                                <label class="form-check-label" for="gridRadios1">
+                                    When you push them you can hear music from the radio.
+                                </label>
+                            </div>
+                            <br>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                <label class="form-check-label" for="gridRadios2">
+                                    They use radio wave technology to transmit your choice.
+                                </label>
+                            </div>
+                            <br>
+                            <div class="form-check disabled">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3"
+                                    >
+                                <label class="form-check-label" for="gridRadios3">
+                                        They are named after the physical buttons used on older radios to select preset stations – when one of the buttons was pressed, other buttons would pop out, leaving the pressed button the only button in the "pushed in" position.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <br>
+                <div class="form-group row">
+                    <div class="col-sm-2">Check each item that is true of you.</div>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                            <label class="form-check-label" for="gridCheck1">
+                                I am kind.
+                            </label>
+                            <br>
+                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                            <label class="form-check-label" for="gridCheck1">
+                                I like ice cream.
+                            </label>
+                            <br>
+                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                            <label class="form-check-label" for="gridCheck1">
+                                I have arms.
+                            </label>
+                            <br>
+                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                            <label class="form-check-label" for="gridCheck1">
+                                I know how to fill in forms.
+                            </label>
+                            <br>
+                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                            <label class="form-check-label" for="gridCheck1">
+                                I have never killed anyone for no good reason.
+                            </label>
+                            <br>
+                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                            <label class="form-check-label" for="gridCheck1">
+                                I want to be Alfie's friend.
+                            </label>
+                            <br>
+                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                            <label class="form-check-label" for="gridCheck1">
+                                Alfie will be better off with my friendship.
+                            </label>
+                            <br>
+                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                            <label class="form-check-label" for="gridCheck1">
+                                I don't care that this form is sloppy and ugly.
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-lg btn-default pull-right">Send →</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>
