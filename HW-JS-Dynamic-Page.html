@@ -10,6 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -18,14 +19,12 @@
 
     </div>
 
-
-
     <script>
         var mainDiv = document.querySelector('div');
         mainDiv.className = "container-fluid"
 
             var headDiv = document.createElement('div');
-            headDiv.className = "row row1 bg-primary d-flex align-items-center";
+            headDiv.className = "row bg-primary d-flex align-items-center";
             mainDiv.appendChild(headDiv);
 
                 var highOn = document.createElement('div');
@@ -39,12 +38,12 @@
                 headDiv.appendChild(home);
 
                 var categories = document.createElement('div');
-                home.className = "text-white pl-5";
-                home.textContent = "Categories";
+                categories.className = "text-white pl-5";
+                categories.textContent = "Categories";
                 headDiv.appendChild(categories);
 
             var bodyDiv = document.createElement('div');
-            bodyDiv.className = "col justify-content-center";
+            bodyDiv.className = "col";
             mainDiv.appendChild(bodyDiv);
 
                 var grayDiv = document.createElement('div');
