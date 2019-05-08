@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM TEST</title>
+</head>
+<body>
+    <a href="http://www.google.com">googs</a>
+    <a href="http://www.yahoo.com">yahoo</a>
+    <a href="http://www.digitalcrafts.com">DC</a>
+
+    <img src="" alt="">
+
+    <script>
+        var anchors = document.getElementsByTagName('a')[0];
+
+        var a = anchors[1];
+        a.textContent = "yahoo news source"
+
+        a.innerHTML = "<img src='https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA4OC85MTEvb3JpZ2luYWwvZ29sZGVuLXJldHJpZXZlci1wdXBweS5qcGVn' alt=''>"
+
+        var href = anchors.getAttribute('href');
+        console.log(anchors);
+
+        var img = document.getElementsByTagName('img')[0];
+        img.setAttribute('src', href)
+    </script>
+
+</html>
