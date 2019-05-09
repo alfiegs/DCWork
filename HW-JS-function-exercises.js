@@ -1,4 +1,5 @@
 
+//√√√√√
 // //POSITIVE NUMBERS - filter function to move negative numbers from old array to new array
 
 // var numberArray = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
@@ -13,8 +14,8 @@
 
 
 
-
-// // EVEN NUMBERS 
+//√√√√√√
+//// EVEN NUMBERS 
 
 // var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 // var evenNums = nums.filter(function(element){
@@ -26,7 +27,7 @@
 
 
 
-
+//√√√√√√
 // //SQUARE THE NUMBERS - forEach function (question: why is squareNums printing to console even though I didn't call it?)
 // nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 // squareNums = nums.forEach(function(element){
@@ -36,7 +37,7 @@
 
 
 
-
+//??????
 // //CITIES 1
 // var cities = [ 
 //     { name: 'Los Angeles', temperature: 60.0}, 
@@ -44,18 +45,134 @@
 //     { name: 'Detroit', temperature: 48.0 }, 
 //     { name: 'New York', temperature: 80.0 } ];
 
-// coolCities = cities.forEach(function(element){
-//     return 
+
+// var LA = (cities[0]);
+// console.log(LA)
+// var cityTemp = Object.values(LA)
+// console.log(cityTemp)
+// console.log(cityTemp[1])
+
+
+
+
+
+
+
+
+
+//??????
+//CITIES 2
+
+
+
+
+
+
+
+
+//√√√√√√
+// //GOOD JOB
+
+// var people = [ 'Dom', 'Lyn', 'Kirk', 'Autumn', 'Trista', 'Jesslyn', 'Kevin', 'John', 'Eli', 'Juan', 'Robert', 'Keyur', 'Jason', 'Che', 'Ben' ];
+
+// var goodJobPeeps = people.forEach(function(element){
+//     console.log('Good job ' + element + '!')
+// })
+
+
+
+//√√√√√
+//SORT AN ARRAY
+// var people = [ 'Dom', 'Lyn', 'Kirk', 'Autumn', 'Trista', 'Jesslyn', 'Kevin', 'John', 'Eli', 'Juan', 'Robert', 'Keyur', 'Jason', 'Che', 'Ben' ];
+// function sortPeople(peeps){
+//     console.log(peeps.sort())
+// }
+//  sortPeople(people)
+
+
+
+
+
+
+//√√√√√√
+// //SORT AN ARRAY 2
+
+// var people = [ 'Dom', 'Lyn', 'Kirk', 'Autumn', 'Trista', 'Jesslyn', 'Kevin', 'John', 'Eli', 'Juan', 'Robert', 'Keyur', 'Jason', 'Che', 'Ben' ];
+// people.sort(function(a, b) {
+//   return a.length - b.length;
+// });
+// console.log(people);
+
+
+
+
+
+
+
+
+//√√√√√√
+//SORT AN ARRAY 3
+//3 Steps with 3 being the complete answer
+
+//1. sum the contents of an array
+// var sum = 0
+// for (var i = 0; i < myArr.length; i++) {
+//     sum += myArr[i]
+// }
+// console.log(sum)
+
+
+//2. function to sum the contents of an array
+// function sumArray(array){
+//     var sum = 0;
+//     for (var i = 0; i < array.length; i++){
+//         sum += array[i];
+//     }
+//     console.log(sum)
+// }
+// sumArray([1, 2, 3])
+
+
+// 3. function to apply (function to sum the contents of an array) forEach of the arrays in an array
+// FINAL ANSWER
+
+// var sumArray = function(array){
+//     var sum = 0;
+//     for (var i = 0; i < array.length; i++){
+//         sum += array[i];
+//     }
+//     console.log(sum)
+// }
+
+// var arrayOfArrays = [[1,2,3],[4,5,6],[5,5,5]]
+// arrayOfArrays.forEach(function(element){
+//     sumArray(element);
 // })
 
 
 
 
 
-//GOOD JOB
 
-var people = [ 'Dom', 'Lyn', 'Kirk', 'Autumn', 'Trista', 'Jesslyn', 'Kevin', 'John', 'Eli', 'Juan', 'Robert', 'Keyur', 'Jason', 'Che', 'Ben' ];
+//√√√√√√
+//3 TIMES
 
-var goodJobPeeps = people.forEach(function(element){
-    
-})
+// function fun(){
+//     console.log('Hello World')
+// }
+
+// function call3Times(fun) { fun(); fun(); fun(); }
+
+// call3Times(fun)
+
+
+
+
+
+
+
+
+
+
+///SUM AN ARRAY
+// let arr = [1,2,3,4];
