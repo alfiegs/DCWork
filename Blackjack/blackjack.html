@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+
+</head>
+
+<body>
+    <div id="table">
+
+        <div id="messages"></div>
+
+        <label id="dealer-text">Dealer: </label>
+
+        <label id="dealer-points" class="points"></label>
+
+        <div id="dealer-hand" class="hand">
+            
+
+
+        </div>
+        <hr>
+        <label>Player: </label>
+
+
+        <label id="player-points" class="points"></label>
+
+        <div id="player-hand" class="hand">
+
+        </div>
+
+        <div class="buttons">
+
+            <button id="deal-button">Deal</button>
+
+            <button id="hit-button">Hit</button>
+
+            <button id="stand-button">Stand</button>
+
+        </div>
+
+        <div id="message-center">
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+
+
+
+
+
+        //CREATE THE DECK
+        /////////////////////////////////////////////////////////////////////////////////////////
+
+        var deck = [];
+
+        for (i = 2; i < 11; i++){
+            deck.push({value: i, suit: "s", imgURL: "JPEG/" + i.toString() + "S.jpg"});
+            deck.push({value: i, suit: "h", imgURL: "JPEG/" + i.toString() + "H.jpg"});
+            deck.push({value: i, suit: "d", imgURL: "JPEG/" + i.toString() + "D.jpg"});
+            deck.push({value: i , suit: "c", imgURL: "JPEG/" + i.toString() + "C.jpg"});
+}
+
+        var faceCards = ["K", "Q", "J"]
+        faceCards.forEach(function(element){
+            deck.push({value: 10, suit: "h", imgURL: "JPEG/" + element + "H.jpg"});
+            deck.push({value: 10, suit: "d", imgURL: "JPEG/" + element + "D.jpg"});
+            deck.push({value: 10, suit: "c", imgURL: "JPEG/" + element + "C.jpg"});
+            deck.push({value: 10, suit: "s", imgURL: "JPEG/" + element + "S.jpg"});
+        })
+
+        var aces = ["H", "D", "C", "S"];
+        aces.forEach(function(element){
+            deck.push({value: 11, suit: element, imgURL: "JPEG/A" + element + ".jpg"})
+        })
+        /////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+        
+
+
+        //PLAYER POINTS and DEALER POINTS VARIABLE
+        var playerPoints = 0;
+        var dealerPoints = 0;
+        var gameOver = "no";
+
+
+        //CREATE DOM ELEMENTS
+        var dealButton = document.getElementById('deal-button'); //Creates "deal" on DOM
+        var hitButton = document.getElementById('hit-button'); //Creates a "hit" button on DOM
+        var standButton = document.getElementById('stand-button'); //Creates a "stand" button on DOM
+        var dealerHand = document.getElementById('dealer-hand'); //Creates area for dealer cards
+        var playerHand = document.getElementById('player-hand'); //Creates area for player cards
+        var messageCenter = document.getElementById('message-center'); //Creates message center to append game messages to
+
+        var faceDownCard = document.createElement('img'); //Creates face down card for dealer upon deal (flips to reverseFaceDown when game is over)
+        faceDownCard.src = "JPEG/Red_back.jpg"; //stores imgURL of face down card (which changes when game is over to reveal reverseFaceDown)
+
+        var reverseFaceDown = "" //stores imgURL of first card chosen from deck during the dealer's deal turn
+
+
+
+
+
+
+        //DEAL BUTTON EVENT LISTENER ADDS TWO RANDOM CARDS TO PAGE WHEN PLAYER CLICKS DEAL
+        //AND ADDS VALUE OF CARDS TO playerPoints
+        /////////////////////////////////////////////////////////////////////////////////////////
+
+            dealButton.addEventListener('click', function(e){ //dealButton event listener
+                if (playerPoints <= 0){ // deal button only works if player has 0 or fewer points
+                    //GENERATES PLAYER'S FIRST DEAL CARD
+                    var randomNum = Math.floor((Math.random() * deck.length) + 0); //generates random number (from 0 through length of deck)
+                    var card1 = document.createElement('img'); //creates card image to display on DOM
+                    card1.src = deck[randomNum]['imgURL']; // retrieves image URL from card in deck based on random number index
+                    playerHand.appendChild(card1); // appends card to DOM
+                    playerPoints = playerPoints + parseInt(deck[randomNum]['value']); //adds value of card to playerPoints
+                    deck.splice(randomNum, 1) //removes index(card) from deck based on random number above
+
+
+                    //GENERATES DEALER'S FIRST DEAL CARD (but does not add image to page)
+                    var dealerRandomNum = Math.floor((Math.random() * deck.length) + 0); //generates random number (from 0 through length of deck)
+                    dealerPoints = dealerPoints + parseInt(deck[dealerRandomNum]['value']); //adds value of card to playerPoints
+                    reverseFaceDown = deck[dealerRandomNum]['imgURL'] //stores imgURL from random card in reverseFaceDown
+                    deck.splice(dealerRandomNum, 1) //removes index(card) from deck based on random number above
+                    dealerHand.appendChild(faceDownCard);//appends face down card to DOM
+
+
+                    //GENERATES PLAYER'S SECOND DEAL CARD
+                    var randomNum2 = Math.floor((Math.random() * deck.length) + 0); //generates random number (from 0 through length of deck)
+                    var card2 = document.createElement('img'); //creates card image to display on DOM
+                    card2.src = deck[randomNum2]['imgURL']; // retrieves image URL from card in deck based on random number index
+                    playerHand.appendChild(card2); // appends card to DOM
+                    playerPoints = playerPoints + parseInt(deck[randomNum2]['value']); //adds value of card to playerPoints
+                    deck.splice(randomNum2, 1) //removes index(card) from deck based on random number above
+
+
+                    //GENERATES DEALER'S SECOND DEAL CARD
+                    var dealerRandomNum2 = Math.floor((Math.random() * deck.length) + 0); //generates random number (from 0 through length of deck)
+                    var dealerShowCard = document.createElement('img'); //creates card image to display on DOM
+                    dealerShowCard.src = deck[dealerRandomNum2]['imgURL']; //retrieves image URL from card in deck based on random number index
+                    dealerPoints = dealerPoints + parseInt(deck[dealerRandomNum2]['value']); //adds value of card to playerPoints
+                    dealerHand.appendChild(dealerShowCard); //retrieves image URL from card in deck based on random number index
+                    deck.splice(dealerRandomNum2, 1) //removes index(card) from deck based on random number above
+
+                console.log('dealer points: ' + dealerPoints)
+                console.log('player points: ' + playerPoints)
+                }
+                })
+            
+
+        //??????????????HOW TO MAKE THIS HAPPEN ONLY ONE TIME (while loop?) ??????????????????????????????
+        /////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+        //HIT BUTTON EVENT LISTENER ADDS ONE RANDOM CARD TO PAGE WHEN PLAYER CLICKS HIT
+        //AND ADDS VALUE OF CARD TO playerPoints
+        /////////////////////////////////////////////////////////////////////////////////////////
+
+        hitButton.addEventListener('click', function(e){ //hit button event listener
+            if (gameOver == "no"){
+                if (playerPoints < 21){ //only allows player to hit if he has fewer than 21 points
+                    var randomNum = Math.floor((Math.random() * deck.length) + 0); //generates random number (from 0 through length of deck)
+                    var hitCard = document.createElement('img'); //creates card image to display on DOM
+                    hitCard.src = deck[randomNum]['imgURL']; // retrieves image URL from card in deck based on random number index
+                    playerHand.appendChild(hitCard); // appends card to DOM
+                    playerPoints = playerPoints + parseInt(deck[randomNum]['value']); //adds value of card to playerPoints
+                    deck.splice(randomNum, 1) //removes index(card) from deck based on random number above
+
+                    if (playerPoints > 21){
+                        messageCenter.textContent = "YOU LOSE" //Appends "you lose" message to message center on DOM
+                        faceDownCard.src = reverseFaceDown;
+                        gameOver = "yes"
+                    }
+            }
+
+                console.log('dealer points: ' + dealerPoints)
+                console.log('player points: ' + playerPoints)
+            }
+        })
+        
+
+        /////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+        //STAND BUTTON EVENT LISTENER ADDS ONE CARD VALUE TO dealerPoints AND DOES NOTHING TO PLAYER POINTS
+        /////////////////////////////////////////////////////////////////////////////////////////
+            
+            standButton.addEventListener('click', function(e){
+
+                if (gameOver = "no"){
+
+                    faceDownCard.src = reverseFaceDown; //reveals dealer's face down card when player stands
+
+
+                    if (dealerPoints < 17){ //if dealer has less than 17 points, he draws a new card
+                        var standRandomNum = Math.floor((Math.random() * deck.length) + 0); //generates random number (from 0 through length of deck)
+                        var dealerStandCard = document.createElement('img'); //creates card image to display on DOM
+                        dealerStandCard.src = deck[standRandomNum]['imgURL']; //retrieves image URL from card in deck based on random number index
+                        dealerHand.appendChild(dealerStandCard); // appends card to DOM
+                        dealerPoints = dealerPoints + parseInt(deck[standRandomNum]['value']); //adds value of card to dealerPoints
+                        deck.splice(standRandomNum, 1); //removes index(card) from deck based on random number above
+                        if (dealerPoints > 21){
+                            messageCenter.textContent = "YOU WIN!";
+                            gameOver = "yes";
+                        }
+                        else if (dealerPoints > playerPoints){
+                            messageCenter.textContent = "YOU LOSE!";
+                            gameOver = "yes";
+                        }
+                    }
+
+                    else if (dealerPoints >= 16 && dealerPoints < 21){ // if dealer has more than 17 points, you lose
+                        messageCenter.textContent = "YOU LOSE!";
+                        gameOver = "yes";
+                    }
+
+                    else if (dealerPoints == playerPoints){
+                        messageCenter.textContent = "TIE GAME!";
+                        gameOver = "yes";
+                    }
+                }
+
+
+
+                // else if (dealerPoints > playerPoints){
+                //     console.log("Dealer wins, you lose!")
+                // }
+                // else if (dealerPoints < playerPoints){
+                //     console.log("Dealer loses, you win!")
+                // }
+
+                console.log('dealer points: ' + dealerPoints)
+                console.log('player points: ' + playerPoints)
+                
+            })
+        
+
+
+
+        
+    </script>
+
+</body>
+
+</html>

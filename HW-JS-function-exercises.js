@@ -28,14 +28,23 @@
 
 
 //√√√√√√
-// //SQUARE THE NUMBERS - forEach function (question: why is squareNums printing to console even though I didn't call it?)
+//SQUARE THE NUMBERS - forEach function (question: why is squareNums printing to console even though I didn't call it?)
+
+//------forEach method
 // nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// sqrs = []
 // squareNums = nums.forEach(function(element){
-//     console.log(element * element);
+//     sqrs.push(element * element);
 // })
+// console.log(sqrs)
 
-
-
+//-----map method
+// nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// variable = nums.map(function(element){
+//     return (element*element)
+    
+// })
+// console.log(variable)
 
 //??????
 // //CITIES 1
@@ -46,12 +55,10 @@
 //     { name: 'New York', temperature: 80.0 } ];
 
 
-// var LA = (cities[0]);
-// console.log(LA)
-// var cityTemp = Object.values(LA)
-// console.log(cityTemp)
-// console.log(cityTemp[1])
 
+// cities.filter(function(element){
+//     console.log(element['temperature'])
+// })
 
 
 
@@ -63,10 +70,19 @@
 //??????
 //CITIES 2
 
+// var cities = [ 
+//     { name: 'Los Angeles', temperature: 60.0}, 
+//     { name: 'Atlanta', temperature: 52.0 }, 
+//     { name: 'Detroit', temperature: 48.0 }, 
+//     { name: 'New York', temperature: 80.0 } ];
+// citiesArray = []
 
+//     cities.filter(function(element){
+//     citiesArray.push(element['name'])
+// })
+// console.log(citiesArray)
 
-
-
+//USE A MAP HERE ^^^
 
 
 
@@ -82,7 +98,7 @@
 
 
 //√√√√√
-//SORT AN ARRAY
+// SORT AN ARRAY
 // var people = [ 'Dom', 'Lyn', 'Kirk', 'Autumn', 'Trista', 'Jesslyn', 'Kevin', 'John', 'Eli', 'Juan', 'Robert', 'Keyur', 'Jason', 'Che', 'Ben' ];
 // function sortPeople(peeps){
 //     console.log(peeps.sort())
@@ -114,7 +130,7 @@
 //SORT AN ARRAY 3
 //3 Steps with 3 being the complete answer
 
-//1. sum the contents of an array
+// 1. sum the contents of an array
 // var sum = 0
 // for (var i = 0; i < myArr.length; i++) {
 //     sum += myArr[i]
@@ -122,7 +138,7 @@
 // console.log(sum)
 
 
-//2. function to sum the contents of an array
+// // 2. function to sum the contents of an array
 // function sumArray(array){
 //     var sum = 0;
 //     for (var i = 0; i < array.length; i++){
@@ -150,12 +166,13 @@
 // })
 
 
+//USE REDUCE METHOD HERE ^^^
 
 
 
 
 //√√√√√√
-//3 TIMES
+// 3 TIMES
 
 // function fun(){
 //     console.log('Hello World')
@@ -166,8 +183,8 @@
 // call3Times(fun)
 
 
-
-
+// ??????
+// CALL N TIMES
 
 
 
@@ -176,3 +193,13 @@
 
 ///SUM AN ARRAY
 // let arr = [1,2,3,4];
+
+
+
+
+
+
+
+
+
+//ACRONYM
