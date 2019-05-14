@@ -13,9 +13,13 @@
 <body>
     <div id="table">
 
+        <div id="message-center"></div>
+
+        <br>
+
         <div id="messages"></div>
 
-        <label id="dealer-text">Dealer's Hand: </label>
+        <button id="dealer-text">Dealer's Hand: </button>
 
         <label id="dealer-points" class="points"></label>
 
@@ -27,7 +31,7 @@
 
         <br>
 
-        <label id="player-text">Your Hand: </label>
+        <button id="player-text">Your Hand: </button>
 
 
         <label id="player-points" class="points"></label>
@@ -43,6 +47,9 @@
             <button id="hit-button">Hit</button>
 
             <button id="stand-button">Stand</button>
+
+            <button id ="new-game-button" value="Refresh Page" onClick="window.location.reload();">New Game</button>
+
 
         </div>
 
@@ -117,8 +124,8 @@
         var dealerHand = document.getElementById('dealer-hand'); //Creates area for dealer cards
         var playerHand = document.getElementById('player-hand'); //Creates area for player cards
         var messageCenter = document.getElementById('message-center'); //Creates message center to append game messages to
-        var dealerText = document.getElementById('dealer-points'); //Creates area to display dealer points
-        var playerText = document.getElementById('player-points'); //Creates area to display player points
+        var dealerText = document.getElementById('dealer-text'); //Creates area to display dealer points
+        var playerText = document.getElementById('player-text'); //Creates area to display player points
 
         var faceDownCard = document.createElement('img'); //Creates face down card for dealer upon deal (flips to reverseFaceDown when game is over)
         faceDownCard.src = "JPEG/Red_back.jpg"; //stores imgURL of face down card (which changes when game is over to reveal reverseFaceDown)
@@ -171,7 +178,7 @@
                     dealerHand.appendChild(dealerShowCard); //retrieves image URL from card in deck based on random number index
                     deck.splice(dealerRandomNum2, 1) //removes index(card) from deck based on random number above
 
-                playerText.textContent = playerPoints
+                playerText.textContent = "Your Hand: " + playerPoints
                 console.log('dealer points: ' + dealerPoints)
                 console.log('player points: ' + playerPoints)
                 }
@@ -206,7 +213,7 @@
                     }
                 }
 
-                playerText.textContent = playerPoints
+                playerText.textContent = "Your Hand: " + playerPoints
                 console.log('dealer points: ' + dealerPoints)
                 console.log('player points: ' + playerPoints)
             }
@@ -272,7 +279,7 @@
                         turnOver = "yes";
                     }
                 }
-                dealerText.textContent = dealerPoints
+                dealerText.textContent = dealerText.textContent + dealerPoints
                 console.log('dealer points: ' + dealerPoints)
                 console.log('player points: ' + playerPoints)
                 

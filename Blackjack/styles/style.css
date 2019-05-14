@@ -18,11 +18,32 @@ img {
 }
 
 #dealer-text{
-    padding: 0px 20px 0px 50px;
-}
+    padding: 0px 0px 0px 0px;
+    background-color: lightgreen;
+    border: none;
+    color: black;
+    margin: 0px 0px 0px 50px;
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;  
+    border-radius: 15px; 
+    width: 230px; }
 
 #player-text{
-    padding: 0px 20px 0px 50px;
+    padding: 0px 0px 0px 0px;
+    background-color: lightgreen;
+    border: none;
+    color: black;
+    margin: 0px 0px 0px 50px;
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;  
+    border-radius: 15px; 
+    width: 200px; 
 }
 
 #dealer-hand{
@@ -54,7 +75,7 @@ img {
     display: inline-block;
     font-size: 16px;  
     border-radius: 15px; 
-    width: 100px;   
+    width: 150px;   
 }
 
 #hit-button{
@@ -67,7 +88,7 @@ img {
     display: inline-block;
     font-size: 16px;  
     border-radius: 15px; 
-    width: 100px;   
+    width: 150px;   
    
     
 }
@@ -82,7 +103,21 @@ img {
     display: inline-block;
     font-size: 16px;
     border-radius: 15px; 
-    width: 100px;   
+    width: 150px;   
+         
+}
+
+#new-game-button{
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px; 
+    width: 150px;   
          
 }
 
