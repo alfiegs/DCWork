@@ -31,33 +31,73 @@
 // console.log(deck)
 
 
-deck = []
+// deck = []
 
 
-for (i = 2; i < 11; i++){
-    deck.push({value: i, suit: "s", imgURL: "JPEG/" + i.toString() + "S.jpg"});
-    deck.push({value: i, suit: "h", imgURL: "JPEG/" + i.toString() + "H.jpg"});
-    deck.push({value: i, suit: "d", imgURL: "JPEG/" + i.toString() + "D.jpg"});
-    deck.push({value: i , suit: "c", imgURL: "JPEG/" + i.toString() + "C.jpg"});
+// for (i = 2; i < 11; i++){
+//     deck.push({value: i, suit: "s", imgURL: "JPEG/" + i.toString() + "S.jpg"});
+//     deck.push({value: i, suit: "h", imgURL: "JPEG/" + i.toString() + "H.jpg"});
+//     deck.push({value: i, suit: "d", imgURL: "JPEG/" + i.toString() + "D.jpg"});
+//     deck.push({value: i , suit: "c", imgURL: "JPEG/" + i.toString() + "C.jpg"});
+// }
+
+// var faceCards = ["K", "Q", "J"]
+// faceCards.forEach(function(element){
+//     deck.push({value: 10, suit: "h", imgURL: "JPEG/" + element + "H.jpg"});
+//     deck.push({value: 10, suit: "d", imgURL: "JPEG/" + element + "D.jpg"});
+//     deck.push({value: 10, suit: "c", imgURL: "JPEG/" + element + "C.jpg"});
+//     deck.push({value: 10, suit: "s", imgURL: "JPEG/" + element + "S.jpg"});
+// })
+
+// var aces = ["H", "D", "C", "S"];
+// aces.forEach(function(element){
+//     deck.push({value: 11, suit: element, imgURL: "JPEG/A" + element + ".jpg"})
+// })
+
+// console.log(deck)
+// console.log(deck.length)
+
+
+function standFunction(){
+    var standRandomNum = Math.floor((Math.random() * deck.length) + 0); //generates random number (from 0 through length of deck)
+    var dealerStandCard = document.createElement('img'); //creates card image to display on DOM
+    dealerStandCard.src = deck[standRandomNum]['imgURL']; //retrieves image URL from card in deck based on random number index
+    dealerHand.appendChild(dealerStandCard); // appends card to DOM
+    dealerPoints = dealerPoints + parseInt(deck[standRandomNum]['value']); //adds value of card to dealerPoints
+    deck.splice(standRandomNum, 1); //removes index(card) from deck based on random number above
+    if (dealerPoints > 21){
+        messageCenter.textContent = "YOU WIN!";
+        turnOver = "yes";
+    }
+    else if (dealerPoints > playerPoints){
+        messageCenter.textContent = "MAN YOU SUCK AT THIS GAME!";
+        turnOver = "yes";
+    }
+
+    else if (dealerPoints == playerPoints){
+    messageCenter.textContent = "TIE GAME!";
+    turnOver = "yes";
+    }
+
+    else if(dealerPoints < playerPoints){
+        messageCenter.textContent = "YOU WIN!";
+        turnOver = "yes";
+    }
 }
 
-var faceCards = ["K", "Q", "J"]
-faceCards.forEach(function(element){
-    deck.push({value: 10, suit: "h", imgURL: "JPEG/" + element + "H.jpg"});
-    deck.push({value: 10, suit: "d", imgURL: "JPEG/" + element + "D.jpg"});
-    deck.push({value: 10, suit: "c", imgURL: "JPEG/" + element + "C.jpg"});
-    deck.push({value: 10, suit: "s", imgURL: "JPEG/" + element + "S.jpg"});
-})
-
-var aces = ["H", "D", "C", "S"];
-aces.forEach(function(element){
-    deck.push({value: 11, suit: element, imgURL: "JPEG/A" + element + ".jpg"})
-})
-
-console.log(deck)
-console.log(deck.length)
 
 
+//DEAL FIRST CARD TO DEALER
+backCardImage = "backcard.jpg"
+
+var firstDealerCard = deck[0]['imgURL'];
+
+dealerHand.appendChild(backCardImage)
+
+
+//STAND
+
+backCardImage.src = firstDealerCard
 
 
 

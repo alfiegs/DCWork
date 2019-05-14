@@ -251,6 +251,30 @@
                             messageCenter.textContent = "YOU WIN!";
                             turnOver = "yes";
                         }
+                        //2ND HIT (IF DEALER HITS AND STILL HAS LESS THAN 16, HIT AGAIN)
+                        else if (dealerPoints < 16){
+                            var standRandomNum = Math.floor((Math.random() * deck.length) + 0); //generates random number (from 0 through length of deck)
+                            var dealerStandCard = document.createElement('img'); //creates card image to display on DOM
+                            dealerStandCard.src = deck[standRandomNum]['imgURL']; //retrieves image URL from card in deck based on random number index
+                            dealerHand.appendChild(dealerStandCard); // appends card to DOM
+                            dealerPoints = dealerPoints + parseInt(deck[standRandomNum]['value']); //adds value of card to dealerPoints
+                            deck.splice(standRandomNum, 1); //removes index(card) from deck based on random number above
+                            if (dealerPoints > playerPoints){
+                                messageCenter.textContent = "MAN YOU SUCK AT THIS GAME!";
+                                turnOver = "yes";
+                            }
+
+                            else if (dealerPoints == playerPoints){
+                            messageCenter.textContent = "TIE GAME!";
+                            turnOver = "yes";
+                            }
+
+                            else if(dealerPoints < playerPoints){
+                                messageCenter.textContent = "YOU WIN!";
+                                turnOver = "yes";
+                            }
+                        //1ST HIT CONSEQUENCES
+                        }
                         else if (dealerPoints > playerPoints){
                             messageCenter.textContent = "MAN YOU SUCK AT THIS GAME!";
                             turnOver = "yes";
