@@ -15,7 +15,7 @@
 
         <div id="messages"></div>
 
-        <label id="dealer-text">Dealer: </label>
+        <label id="dealer-text">Dealer's Hand: </label>
 
         <label id="dealer-points" class="points"></label>
 
@@ -24,8 +24,10 @@
 
 
         </div>
-        <hr>
-        <label>Player: </label>
+
+        <br>
+
+        <label id="player-text">Your Hand: </label>
 
 
         <label id="player-points" class="points"></label>
@@ -44,6 +46,8 @@
 
         </div>
 
+        <br>
+
         <div id="message-center">
 
         </div>
@@ -54,6 +58,16 @@
 
     <script>
 
+
+
+        //TO DO
+        /////////////////////////////////////////////////////////////////////////////////////////
+        //> Make aces equal one (not eleven) when you go over 21.
+        //> When standing, allow dealer to draw again if he still has less than 16
+        //> Add option to start new game
+        //> Keep track of number of wins
+        //> Add betting mechanism
+        //> Add event listeners for keys so you can use the keyboard to play
 
 
 
@@ -93,7 +107,7 @@
         //PLAYER POINTS and DEALER POINTS VARIABLE
         var playerPoints = 0;
         var dealerPoints = 0;
-        var gameOver = "no";
+        var turnOver = "no";
 
 
         //CREATE DOM ELEMENTS
@@ -103,6 +117,8 @@
         var dealerHand = document.getElementById('dealer-hand'); //Creates area for dealer cards
         var playerHand = document.getElementById('player-hand'); //Creates area for player cards
         var messageCenter = document.getElementById('message-center'); //Creates message center to append game messages to
+        var dealerText = document.getElementById('dealer-points'); //Creates area to display dealer points
+        var playerText = document.getElementById('player-points'); //Creates area to display player points
 
         var faceDownCard = document.createElement('img'); //Creates face down card for dealer upon deal (flips to reverseFaceDown when game is over)
         faceDownCard.src = "JPEG/Red_back.jpg"; //stores imgURL of face down card (which changes when game is over to reveal reverseFaceDown)
@@ -111,7 +127,7 @@
 
 
 
-
+        
 
 
         //DEAL BUTTON EVENT LISTENER ADDS TWO RANDOM CARDS TO PAGE WHEN PLAYER CLICKS DEAL
@@ -120,6 +136,7 @@
 
             dealButton.addEventListener('click', function(e){ //dealButton event listener
                 if (playerPoints <= 0){ // deal button only works if player has 0 or fewer points
+
                     //GENERATES PLAYER'S FIRST DEAL CARD
                     var randomNum = Math.floor((Math.random() * deck.length) + 0); //generates random number (from 0 through length of deck)
                     var card1 = document.createElement('img'); //creates card image to display on DOM
@@ -154,13 +171,13 @@
                     dealerHand.appendChild(dealerShowCard); //retrieves image URL from card in deck based on random number index
                     deck.splice(dealerRandomNum2, 1) //removes index(card) from deck based on random number above
 
+                playerText.textContent = playerPoints
                 console.log('dealer points: ' + dealerPoints)
                 console.log('player points: ' + playerPoints)
                 }
                 })
             
 
-        //??????????????HOW TO MAKE THIS HAPPEN ONLY ONE TIME (while loop?) ??????????????????????????????
         /////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -173,7 +190,7 @@
         /////////////////////////////////////////////////////////////////////////////////////////
 
         hitButton.addEventListener('click', function(e){ //hit button event listener
-            if (gameOver == "no"){
+            if (turnOver == "no"){
                 if (playerPoints < 21){ //only allows player to hit if he has fewer than 21 points
                     var randomNum = Math.floor((Math.random() * deck.length) + 0); //generates random number (from 0 through length of deck)
                     var hitCard = document.createElement('img'); //creates card image to display on DOM
@@ -183,12 +200,13 @@
                     deck.splice(randomNum, 1) //removes index(card) from deck based on random number above
 
                     if (playerPoints > 21){
-                        messageCenter.textContent = "YOU LOSE" //Appends "you lose" message to message center on DOM
+                        messageCenter.textContent = "WOW WHAT A STUPID MOVE!" //Appends "you lose" message to message center on DOM
                         faceDownCard.src = reverseFaceDown;
-                        gameOver = "yes"
+                        turnOver = "yes"
                     }
-            }
+                }
 
+                playerText.textContent = playerPoints
                 console.log('dealer points: ' + dealerPoints)
                 console.log('player points: ' + playerPoints)
             }
@@ -209,9 +227,10 @@
             
             standButton.addEventListener('click', function(e){
 
-                if (gameOver = "no"){
+                if (turnOver == "no"){
 
                     faceDownCard.src = reverseFaceDown; //reveals dealer's face down card when player stands
+                    turnOver = "yes"
 
 
                     if (dealerPoints < 17){ //if dealer has less than 17 points, he draws a new card
@@ -223,34 +242,37 @@
                         deck.splice(standRandomNum, 1); //removes index(card) from deck based on random number above
                         if (dealerPoints > 21){
                             messageCenter.textContent = "YOU WIN!";
-                            gameOver = "yes";
+                            turnOver = "yes";
                         }
                         else if (dealerPoints > playerPoints){
-                            messageCenter.textContent = "YOU LOSE!";
-                            gameOver = "yes";
+                            messageCenter.textContent = "MAN YOU SUCK AT THIS GAME!";
+                            turnOver = "yes";
+                        }
+
+                        else if (dealerPoints == playerPoints){
+                        messageCenter.textContent = "TIE GAME!";
+                        turnOver = "yes";
+                        }
+
+                        else if(dealerPoints < playerPoints){
+                            messageCenter.textContent = "YOU WIN!";
+                            turnOver = "yes";
                         }
                     }
-
-                    else if (dealerPoints >= 16 && dealerPoints < 21){ // if dealer has more than 17 points, you lose
-                        messageCenter.textContent = "YOU LOSE!";
-                        gameOver = "yes";
+                    else if (dealerPoints > playerPoints){
+                        messageCenter.textContent = "I CAN'T BELIEVE YOU'RE SO BAD AT THIS!";
+                        turnOver = "yes";
                     }
-
-                    else if (dealerPoints == playerPoints){
+                    else if (dealerPoints < playerPoints){
+                        messageCenter.textContent = "YOU WIN!";
+                        turnOver = "yes";
+                    }
+                    else if (dealerPoints = playerPoints){
                         messageCenter.textContent = "TIE GAME!";
-                        gameOver = "yes";
+                        turnOver = "yes";
                     }
                 }
-
-
-
-                // else if (dealerPoints > playerPoints){
-                //     console.log("Dealer wins, you lose!")
-                // }
-                // else if (dealerPoints < playerPoints){
-                //     console.log("Dealer loses, you win!")
-                // }
-
+                dealerText.textContent = dealerPoints
                 console.log('dealer points: ' + dealerPoints)
                 console.log('player points: ' + playerPoints)
                 
