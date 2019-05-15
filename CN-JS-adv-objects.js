@@ -93,22 +93,82 @@
 
 // shannon.greet()
 
+// class Testing{
+//     constructor(test){
+//         this.test = test;
+//     }
+
+//     printTest(){
+//         console.log()
+//     }
+// }
+
+// class Person{
+//     constructor(fname, lname, location){
+//         this.fname = fname;
+//         this.lname = lname;
+//         this.location = location;
+//     }
+
+//     greeting(){
+//         console.log(`my name is ${this.fname}`)
+//     }
+// }
+
+// var Chase = new Person("Chase", "Brumfield", "Houston")
+
+// Chase.greeting()
 
 
-class Person{
-    constructor(fname, lname, location){
-        this.fname = fname;
-        this.lname = lname;
-        this.location = location;
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//CLOSURES
+
+// function doSomeMath(){
+//     var a = 4;
+//     var b = 5;
+//     var sum = a + b;
+//     return sum;
+// }
+
+// var result = doSomeMath();
+// console.log(result)
+
+
+
+// function doSomeMath(){
+//     var a = 4;
+//     var b = 5;
+//     function sum(){
+//         return a + b;
+//     }
+//     return sum();
+// }
+
+// var result = doSomeMath();
+// console.log(result)
+
+
+
+//SET TIMEOUT
+function doSomeMath(){
+    var a = 4;
+    var b = 5;
+    var sum = function(){
+        console.log(a + b)
+        return a + b;
     }
+    setTimeout(sum, 3000)
 
+    console.log('Im done executing')
 
-
-    greeting(){
-        console.log(`my name is ${this.fname}`)
-    }
+    return 'im done'
 }
 
-var Chase = new Person("Chase", "Brumfield", "Houston")
-
-Chase.greeting()
+doSomeMath()

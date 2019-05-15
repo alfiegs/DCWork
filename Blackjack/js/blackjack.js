@@ -87,8 +87,19 @@ function standFunction(){
 
 
 
-//DEAL FIRST CARD TO DEALER
+
+
+
+
+
+
+
+
 backCardImage = "backcard.jpg"
+firstDealerCard = ""
+
+
+//DEAL FIRST CARD TO DEALER
 
 var firstDealerCard = deck[0]['imgURL'];
 
