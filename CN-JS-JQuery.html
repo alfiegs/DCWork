@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <p id="demo"></p>
+
+
+
+        <script>
+
+            let people = []
+            let html = ""
+    
+            let person = {
+                fname: "Alfie",
+                lname: "Santos",
+                city: "Houston"
+            }
+            let person1 = {
+                fname: "Joe",
+                lname: "Blow",
+                city: "NYC"
+            }
+
+            let person2 = {
+                fname: "Bob",
+                lname: "Hope",
+                city: "LA"
+            }
+
+            people.push(person);
+            people.push(person1);
+            people.push(person2);
+            console.log(people);
+
+            let myHTML = (p) => {
+                return `
+                <h1>${p.fname} ${p.lname}</h1>
+                <p>${p.city}</p>
+                `
+            }
+
+            people.forEach(p => {
+                html += myHTML(p)
+            })
+
+            document.querySelector("#demo").innerHTML = html
+    
+        </script>
+</body>
+</html>

@@ -302,3 +302,157 @@
 // console.log(michael.age);
 // michael.incrementAge();
 // console.log(michael.age);
+
+
+
+
+
+// //------------------------------------------------------------------
+
+// //FUNCTION TO SUM ITEMS IN AN ARGUMENT
+// let sum = (...args) => {
+// let result = 0;
+// result = args.reduce((acc, elem) => acc + elem);
+// return result
+// }
+
+// console.log(sum(1, 3, 5, 7, 9))
+
+
+
+//HOISTING
+// var a = 5;
+// var b = 10;
+
+// if (b > a){
+//     c = a + b + c;
+
+//     let c = 2;  // >>>change LET to VAR and this will work - because of "hoisting"
+//     console.log(c)
+// }
+
+// console.log(c)
+
+
+
+
+// isNumber = () =>{
+//     if(typeof a === "number"){
+//         return "This is a number"
+
+//     }
+//     else{
+//         return "This is not a number"
+//     }
+// }
+// console.log(isNumber("10"))
+
+// //TERNARY OPERATOR
+
+// // condition ? result1 : result2;
+// typeof a === "number"? "this is a number" : "this is not a number"
+
+// //ternary operator in the isNumber function from above (replace if statement)
+// let isNumber = (a) =>{
+//     typeof a === "number"? "this is a number" : "this is not a number"
+// }
+// console.log(isNumber("10"))
+
+
+
+
+//rewrite this with arrow functions (ES6)
+
+//ES5
+// function mult(a, b){
+//     return a*b;
+// }
+//ES6
+// let mult = (a, b) => a*b
+// console.log(mult(4, 5))
+
+
+
+
+
+
+//multiply values in an object using destructring
+// let obj = {
+//     x: 5,
+//     y: 20,
+//     z: 3
+// }
+// let mult = (o) => {
+// let {x, y, z} = o;
+// return x*y*z;
+// }
+// console.log(mult(obj))
+
+
+
+
+
+// //spread operator
+// //use spread operator (...variable) to construct an array variable
+// //fills in the blanks in an array
+
+// let a, b, c, d, arr
+
+// a = [1, 2]
+// b = [4, 5]
+// c = [8, 9, 10]
+// d = 11
+
+// arr = [0, ...a, 3, ...b, 6, 7, ...c, d]
+
+// console.log(arr)
+
+
+
+
+
+
+
+
+
+
+// //ITERATE OVER A STRING
+// //how many vowels in sentence
+// //ES5
+// var vowelCount = 0;
+// var vowels = ["a", "e", "i", "o", "u"];
+// let str = "Today is a sleepy day";
+// for (let i = 0; i < str.length; i++){
+//     if(vowels.includes(str[i])){
+//         vowelCount++;
+//     }
+// }
+// console.log(vowelCount)
+
+
+// //ES6
+// //for in - iterates through object
+// //for of - iterates through string
+// var vowelCount = 0;
+// var vowels = ["a", "e", "i", "o", "u"];
+// let str = "Today is a sleepy day";
+
+
+// for(let s of str){
+//     if(vowels.includes(s)){
+//         vowelCount++
+//     }
+// }
+// console.log(vowelCount)
+
+
+
+
+
+
+// var a = "first";
+// var b = "second";
+// // console.log(a, b)
+// //reverse this: a=b and b=a
+// [b, a] = [a, b];
+// console.log(a, b)

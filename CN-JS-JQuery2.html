@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        header{
+            background-color: pink;
+            height: 300px;
+            width: 100%;
+        }
+        #mainStyle{
+            background-color: greenyellow;
+
+        }
+
+        .myAnchor{
+            color: red;
+            font-size: 35px;
+        }
+
+        .active{
+            background-color: yellow;
+
+        }
+
+    </style>
+</head>
+<body>
+    
+
+
+    <header>
+        <h1>Digital Crafts</h1>
+        <h2>Coding Camp</h2>
+        <img width="200px" src="https://static.scientificamerican.com/sciam/cache/file/D059BC4A-CCF3-4495-849ABBAFAED10456_source.jpg?w=590&h=800&526ED1E1-34FF-4472-B348B8B4769AB2A1" alt="" id="puppies">
+
+    </header>
+
+    <main>
+        <p data-anythingHere="hello">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, neque illum. Qui quidem eius eveniet laudantium provident sit deserunt perferendis cumque, incidunt itaque iure omnis libero sequi aliquam porro voluptatem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nemo veritatis, praesentium commodi recusandae numquam quaerat, porro libero, magnam voluptatibus eum. Assumenda beatae ullam et fugit molestiae maxime. Excepturi, iste.</p>
+        <p id="mainStyle"></p>
+
+        <button id="the-button">Click Me, Baby!</button>
+        <button id="button-again">Click Me Again, Baby!</button>
+        <br>
+        <a href="x" class="myAnchor">New Link</a>
+        <br>
+
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </main>
+
+
+
+
+
+
+    <script
+    src="http://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <script>
+        //~~One method to access JQuery library
+        // $(document).ready(function (){
+        //     //jquery code
+        // })
+
+        //~~Another method to access JQuery 
+        $(function(){
+            // //jquery code
+            // //Traditional JS way of getting elements from DOM vs JQuery
+            // document.getElementById("puppies");//traditional JS
+            // $('#puppies')//JQuery
+
+            // document.querySelector("#puppies");
+
+            // document.querySelectorAll(".mainStyle")//returns array of multiple elements with this class
+            // $.('.mainStyle')//JQuery
+
+            // document.getElementsByTagName("p")
+            // documenet.querySelectorAll("p") 
+            // $("p")//JQuery
+
+
+            //add $ before variable to indicated that it is using JQuery
+            // let $result = $("p")
+            // console.log($result)
+
+
+            // let $a = $('[data-anythingHere]') //retrieve self-made attribute (from p tag in HTML)
+            // console.log($a)
+
+
+            //retrieve element from DOM and change it
+            let $p = $('#mainStyle').html("This is appended using JQuery <br>")
+
+            let $x = $("h2").html("This is a new heading")
+            let $y = $("h1").html("THE TITLE OF THIS WEBPAGE")
+
+
+            //creating an element, assigning attributes
+            $anchor = $('<a>', {
+                'class': "myAnchor",
+                'text': "this is an anchor",
+                'target': '_blank',
+                'href': 'http://www.yahoo.com'
+            })
+            //appending element 
+            $p.append($anchor);
+
+
+
+            //
+
+
+            // //creating and appending an event listener
+            // $('#the-button').click((e)=>{
+            //     alert("Oh yeah, I love it when you click me!");
+            // })
+                
+                //another way to append event listner
+                // $('#the-button').on('click', (e)=>{
+                //     alert('hello, cute thing')
+                // })
+
+
+                //keycode event listener
+                // $('textarea').keydown((e)=>{
+                //     console.log(`Key Down: ${e.keyCode}`)
+                // })
+                // $('textarea').keyup((e)=>{
+                //     console.log(`Key Up: ${e.keyCode}`)
+                // })
+
+                
+                //BUTTON HIDES TEXT AREA, FADE OUT
+                // $('#the-button').on('click', (e)=>{
+                //     $('textarea').fadeOut()
+                // })
+                // $('#button-again').on('click', (e)=>{
+                //     $('textarea').fadeIn()
+                // })
+
+                //BUTTON HIDES h1 FADE IN AND OUT
+                // $('#the-button').on('click', (e)=>{
+                //     $('h1').fadeOut()
+                // })
+
+                // $('#button-again').on('click', (e)=>{
+                //     $('h1').fadeIn()
+                // })
+                
+                $('#the-button').on('click', (e)=>{
+                    $('h1').slideUp(5000);
+                })
+
+                $('#button-again').on('click', (e)=>{
+                    $('h1').slideDown(5000);
+                })
+                
+            
+
+
+
+
+
+        })
+
+
+    </script>
+</body>
+</html>
