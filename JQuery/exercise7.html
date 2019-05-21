@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        /*
+        Make a Todo List
+        0. Make it so that after entering the task description, in the text field and clicking the "Add Task" button, a new task appears inside the element with the id todo-list.
+        1. the ability to remove tasks (add an x button)
+        2. the ability to check off tasks - strikes them out wo removing (add a checkbox)
+        3. the ability to delete a task
+        4. the ability to edit an existing task
+        */
+
+        $(function () {
+            // Write code here
+            $("#add-button").click((e) => {
+                console.log("clicked");
+                $("#todo-list").append("<li id='item'>" + $('input:text').val() + "<button class='delete-button'>X</button>")
+            })
+            
+            //$("item to manipulate").on("event", "item that triggers manipulation", function(){})
+            $("#todo-list").on("click", ".delete-button", function(){
+                $("#item").remove()
+            })
+            
+
+
+            
+            
+            
+            
+            // $("#test").click((e) => {
+            //     $("#todo-list").append("<li>" + "hello" + "<button id='delete-button'>X</button>")
+            // })
+            
+            
+            
+            // // REMOVE ITEM WHEN USER CLICKS ANYWHERE ON ITEM
+            // $("#todo-list").on("click", "li", function(){
+            //     $(this).remove();
+            // })
+
+
+
+            // // ADD CHECKBOX TO ALL LIST ITEMS
+            // $("#check").on("click", function(){
+            //     $("#todo-list li").append("<input id='checkbox' type='checkbox'></input>")
+            // })
+
+
+
+            // // CROSS THROUGH ITEM WHEN IT IS CLICKED ANYWHERE
+            // $("#todo-list").on("click", "li", function(){
+            //     $(this).css("text-decoration", "line-through");
+                
+            // })
+
+
+
+
+
+
+
+
+
+
+
+        });
+    </script>
+    <style>
+        #wrapper {
+            max-width: 480px;
+            margin: auto;
+        }
+
+        #description,
+        #search,
+        #todo-list {
+            font-size: 1.5em;
+        }
+        #delete-button{
+            margin: 0px 0px 0px 50px; 
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <input id="description" type="text" name="description">
+        <button id="add-button">Add Task</button>
+        <button id="test">test</button>
+        <button id="check">check off</button>
+
+        <ul id="todo-list">
+            <li id="feed">Feed the cat</li>
+        </ul>
+    </div>
+</body>
+
+</html>

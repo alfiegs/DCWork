@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+        //XHR Object with open and send methods 
+        var apiRequestObject = new XMLHttpRequest()
+
+        let httpMethod = "GET" //Get, Post, Delete, Put requests are also  options here
+        let url = "https://developer.mozilla.org/en-US/";
+
+        apiRequestObject.open(httpMethod, url, true) //open method, pass in method and url variables we created above
+        
+        apiRequestObject.onreadystatechange = function() { //listens for status
+            //waiting for cahnges in state of transmission of xhr object
+
+            if(apiRequestObject.readyState === 4 && apiRequestObject.status === 200) {
+                console.log(apiRequestObject.responseText)
+            }
+
+        }
+
+        //send method - sends requeset to server
+        apiRequestObject.send(); 
+        </script>
+</body>
+</html>

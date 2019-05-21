@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        //PARSING AND STRINGIFYING JSON ELEMENTS
+        //Create a JSON string, looks like an object but it's a string. key has double quotes, colon, value has double quotes
+        let objJSONString = '{"name": "DigitalCrafts", "location": "Houston"}'
+        console.log(objJSONString) 
+        console.log(typeof(objJSONString)) 
+        //parse function converts JSON string to a JS object
+        let objJSONObject = JSON.parse(objJSONString)
+        console.log(objJSONObject)
+        console.log(typeof(objJSONObject))
+        console.log(objJSONObject["location"]) //can retrieve by key like normal object (because it is normal object)
+        
+
+        //stringify function converts JS object to JSON string
+        let convertobjJSONObjectIntoStrong = JSON.stringify(objJSONObject);
+        console.log(convertobjJSONObjectIntoStrong)
+        console.log(typeof(convertobjJSONObjectIntoStrong))
+        </script>
+</body>
+</html>

@@ -9,14 +9,18 @@
 <body>
 
 
-
-<form action="jquery.html" method="get">
+<!--VALIDATORS-->
+<form action="mailto:alfie8000@gmail.com" method="get">
     <fieldset> <!--<fieldset disabled> turns off form fields-->
         <legend>Personal Information</legend>
-            <input type="text" name="name" placeholder="name">
-            <input type="radio" name="isActive">
-            <input type="checkbox" name="isCurent">
-            <input type="password" name="password" placeholder="password">
+            <input id="name" type="text" name="name" placeholder="name"> <!--if required, won't submit until filled-->
+            <input id="active" type="radio" name="isActive">
+            <input id="current" type="checkbox" name="isCurent">
+            <input id="password" type="password" name="password" placeholder="password">
+            <input type="text" name="city" placeholder="city" minlength="4" maxlength="8">
+            <input type="text" name="city" placeholder="city">
+            <input id="email" type="email" name="enail" placeholder="email">
+            <button type="submit">submit</button> 
     </fieldset>
         <button type="submit">submit</button>
 </form>
@@ -24,9 +28,29 @@
 <script
   src="http://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  <script>
-  </script>
+  crossorigin="anonymous">
+</script>
+
+<script>
+let name = document.getElementById('name');
+name.addEventListener('keydown', (e)=>{
+    console.log('keys ' + e.code)
+})
+</script>
+<!-- <script>
+    let email = document.getElementById('email');
+    email.addEventListener('input', (e)=>{
+        //SET CUSTOM VALIDITY
+        if(email.validity.typeMismatch){
+            email.setCustomValidity("Can you read?? I said email!")
+        }
+        else{
+            email.setCustomValidity('')
+        }
+    })
+
+
+</script> -->
 
 
 </body>

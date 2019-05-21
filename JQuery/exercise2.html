@@ -7,18 +7,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         /*
-        Change the text of the button to "Please click me!". Putting your code in the document ready block is important.
-        */
+        When the button is clicked, print "You clicked!" to the console. */
         $(document).ready(function () {
             // Put your code here
-            document.getElementById('the-button');
-            $('#the-button').html = "Please Click Me!"
+            $('#the-button').click((e) => {
+                $('#the-button').text("You clicked!")
+            })
         });
     </script>
 </head>
 
 <body>
-    <button id="the-button">meh</button>
+    <button id="the-button">Click me!</button>
 </body>
 
 </html>
