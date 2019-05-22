@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+        <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="GOT-API.js"></script>
+    <script>
+
+
+object1 = {}
+for(let i = 1; i < 20; i++){
+    object1[i] = i+i
+
+}
+console.log(object1)
+console.log(object1[2])
+
+//     var housesDict = {}
+
+// for(let i = 1; i < 20; i++){
+//     let url2 = "https://anapioficeandfire.com/api/houses/" + i;
+//     $.get(url2).done((response) => {
+//         let number = response.url.slice(41, response.url.length);
+//             housesDict["house"+number.toString()] = response.name;
+//     })
+
+// }
+// console.log(housesDict)
+// console.log(housesDict["house10"])    
+    </script>
+</body>
+</html>

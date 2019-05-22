@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #map{
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    
+        <div id="map"></div>
+
+
+
+        <script>
+            var options = {
+                center: {lat: 29.7604, lng: -95.3698},
+                zoom: 9
+            }
+
+            function initMap(){
+                var map = new google.maps.Map(document.getElementById('map'), options)
+
+                //add marker when user clicks map
+                google.maps.event.addListener(map, 'click', (event) => {
+                    addMarker({ coords: event.latLng })
+                })
+
+                function addMarker(props){
+                    var marker = new google.maps.Marker({
+                    position: props.coords,
+                    map: map,
+                    
+                })
+
+
+
+                if(props.image){
+                    marker.setIcon(props.image)
+                }
+
+                if(props.infoWindow){//only adds info window if info window data is passed to it
+                //info window
+                var infoWindow = new google.maps.InfoWindow({
+                    content: props.infoWindow
+                })
+
+                marker.addListener('click', () => {
+                    infoWindow.open(map, marker)
+                })
+            }
+
+                }// end addMarker function
+
+                addMarker({
+                coords: {lat: 29.7604, lng: -95.3698},
+                image: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+                infoWindow: '<h1>Houston, TX</h1>'
+                })
+                addMarker({
+                coords: {lat: 29.7858, lng: -95.8244},
+                image: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+                infoWindow: '<h1>Kay, TX</h1>'
+                }) //katy
+                addMarker({coords: {lat: 29.7858, lng: -95.8244}}) //katy
+                addMarker({coords: {lat: 29.9988, lng: -95.2622}}) //humble
+                addMarker({coords: {lat: 29.9119, lng: -95.0622}}) //crosby
+
+
+                //add marker
+                // var marker = new google.maps.Marker({
+                //     position: {lat: 29.7604, lng: -95.3698},
+                //     map: map,
+                //      image:
+
+                // })
+
+                //info window
+                // var infoWindow = new google.maps.InfoWindow({
+                //     content: '<h1>Houston, TX</h1>'
+                // })
+
+                // marker.addListener('click', ()=>{
+                //     infoWindow.open(map, marker)
+                // })
+
+
+
+            }
+        </script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTLHA4kWqkubsSo6VGTsiWl_lhhs9TNAQ&callback=initMap"
+        async defer></script>
+</body>
+</html>
