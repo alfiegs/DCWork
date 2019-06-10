@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        name: <input id="name" type="text" name="name" required><br>
+        email: <input id="email" type="text" name="email"><br>
+        mobile: <input id="mobile" type="text" name="mobile"><br>
+        <br>
+        <br>
+        <button id="submit-button" type="submit">Submit</button>
+
+    </form>
+
+    <div id="message"></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+
+            $('form').submit((e) => {
+                e.preventDefault();
+                $.post('/', {
+                name: $('#name').val(),
+                email: $('#email').val(),
+                mobil: $('#mobile').val()
+                }, successFunction)
+            })
+        
+            let successFunction = (data) => {
+                $('#message').html('successfully posted form data')
+            }
+
+        })
+    </script>
+
+
+    <!-- <script>
+
+        let button = document.getElementById('submit-button')
+        button.addEventListener('click', (e) => {
+            e.preventDefault()
+            fetch('/', {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                mobile: document.getElementById('mobile').value,
+            })
+            })
+            .then((data) => {
+                document.getElementById('message').innerHTML = "form data successfully sent"
+            })
+        })
+
+
+    </script> -->
+</body>
+
+</html>
