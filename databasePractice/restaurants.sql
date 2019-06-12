@@ -92,4 +92,4 @@
 --WHERE id = 1;
 
 --Only single quotes can be used to enclose a string, not double
---To include an apostrophe in a string, use double quote
+--To include an apostrophe in a string, use two single quotes
