@@ -1,0 +1,92 @@
+npm init
+npm install express
+npm install sequelize
+npm install pg pg-hstore
+npm install -g sequelize-cli (Sequelize command line interface) (had to do sudo) (-g dash g is a global install)
+(if you need to uninstall: npm uninstall "module-name")
+
+sequelize init (initializes sequelize project, sets up folder framework) (sequelize command possible because of sequelize-cli)
+
+        in config.json file
+        delete test and other 
+        {
+        "development": {
+            "username": "postgres",
+            "password": null,
+            "database": "sequelizedb",
+            "host": "127.0.0.1",
+            "dialect": "mysql",
+            "operatorsAliases": false
+        }
+        }
+
+
+createdb sequelizedb
+
+
+
+    model - models tables in database
+    To generate a model
+
+command to create model inside of models folder
+sequelize model:generate --name  user --attributes firstName:string,lastName:string,email:string
+
+command to generate table
+sequelize db:migrate
+
+
+    create app.js
+
+command to create seeders file:
+seed:generate --name userInit
+
+    seeders file when filled out and run puts data inside table
+
+    module.exports = {
+    up: (queryInterface, Sequelize) => {
+    
+      return queryInterface.bulkInsert('users', [{
+        firstName: 'Alfie',
+        lastName: 'Santos',
+        email: 'alfie@dc.com',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+
+        down: (queryInterface, Sequelize) => {
+    
+
+      return queryInterface.bulkDelete('users', null, {});
+    
+  }
+
+
+
+
+command to run seeders file
+sequelize db:seed:all
+
+
+
+
+
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+create a migration file
+sequelize migration:create --name addColumnToTask
+queryInterface.dropTable
+              .createTable
+              .renameTable
+              etc.
+
+
+
+
+run migration file
+sequelize db:migrate

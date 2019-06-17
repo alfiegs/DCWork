@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    hi
+    <% test2s.forEach(record => { %>
+        <h1><%= record.firstName %> </h1>
+        <h2><%= record.lastName %></h2>
+        <p><%= record.bio %></p>
+        <img src="<%= record.imgURL %>" height="200px" alt="">
+        <hr>
+    <% }) %>
+</body>
+</html>
