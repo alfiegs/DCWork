@@ -15,4 +15,7 @@ rp('https://en.wikipedia.org/wiki/Futures_and_promises')
     .catch(function (err) {
         console.log('Crawling Failed');
     });
-
+    
+    fs.copy('/tmp/myfile', '/tmp/mynewfile')
+    .then(() => console.log('success!'))
+    .catch(err => console.error(err))

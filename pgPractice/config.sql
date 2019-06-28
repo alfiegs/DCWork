@@ -49,3 +49,8 @@
 -- ALTER TABLE restaurants
 -- ADD imageURL varchar(150);
 
+
+CREATE TABLE album (
+    id SERIAL PRIMARY KEY,
+    name varchar(50)
+);

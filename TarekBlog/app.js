@@ -10,6 +10,7 @@ app.set('views', 'views');
 app.use(express.static('public')); 
 app.use(require('./routes/index'));
 app.use(require('./routes/newEntry'));
+app.use(require('./routes/ideas'));
 
 
 app.listen(port, (params) => {

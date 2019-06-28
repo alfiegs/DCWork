@@ -1,0 +1,14 @@
+create folder
+
+npm init
+npm install pbkdf2
+
+create app.js
+    let pbkdf2 = require('pbkdf2');
+    let crypto = require('crypto');
+
+
+SESSIONS
+
+npm install express express-session cookie-parser
+

@@ -65,3 +65,28 @@ seed:generate --name userInit
 
 command to run seeders file
 sequelize db:seed:all
+
+
+
+
+
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+create a migration file
+sequelize migration:create --name addColumnToTask
+queryInterface.dropTable
+              .createTable
+              .renameTable
+              etc.
+
+
+
+
+run migration file
+sequelize db:migrate

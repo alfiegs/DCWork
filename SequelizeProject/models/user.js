@@ -7,7 +7,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   user.associate = function(models) {
     // associations can be defined here
-    models.user.hasMany(models.tasks) //creates a userId inside Task table (creates a relationship between User and Task tables)
+    models.user.hasMany(models.task) //creates a userId inside Task table (creates a relationship between User and Task tables)
   };
   return user;
 };
+
+//this file defines table but doesn't create table
+//have to edit migration file too

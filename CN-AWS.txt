@@ -1,0 +1,121 @@
+PORTFOLIO NOTES
+
+-steal technology icons from somebody else's portfolio site
+
+-some icons are pulling from Font Awesome library and are not images
+(class="fa fa-facebook")
+
+-in big header write where you are located:
+Hi! I'm a Houston-based developer, etc.
+
+-GitHub ReadMe
+-database diagram - dbdiagram.io
+
+
+create a readme for GitHub
+code README.md (markdown language) (must be named README with caps)
+
+
+
+
+
+
+AWS NOTES
+
+Sign onto AWS
+Services > Compute > EC2
+
+launch instance
+
+Ubuntu Server 18.04 LTS (HVM), SSD Volume Type, 64bit
+
+General purpose, T2 macro (low to moderate performance because it's free)
+review and launch button
+
+T2 micro --> blue launch button
+
+create a new key pair
+Key pair name:
+NodeApp
+Download Key Pair
+Launch Instances Blue Button
+
+(error at this point - clicked retry and it worked)
+
+
+services > EC2
+
+click server you want
+click connect
+
+Connect to your instance - dialog box appears
+
+
+run
+chmod 400 NodeApp.pem
+(changes read/write permissions)
+
+
+run
+ssh -i "NodeApp.pem" ubuntu@ec2-3-81-20-225.compute-1.amazonaws.com
+type yes in response to question
+
+
+run either 
+apt-get update 
+or
+sudo apt-get update
+
+run
+apt-get install
+
+run
+sudo reboot
+
+log in again with same command:
+ssh -i "NodeApp.pem" ubuntu@ec2-3-81-20-225.compute-1.amazonaws.com
+
+
+install nvm
+run
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
+load nvm
+run
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+run
+nvm
+you get a menu
+
+
+run
+nvm install --lts
+(to install node)
+
+
+
+
+
+ssh-keygen -t rsa -b 4096 -C "your_github_email@example.com"
+cat ~/.ssh/id_rsa.pub
+--the cat gives you a big string of info ending in email, copy this and follow these steps:
+
+go to github.com
+click on your picture icon on the upper right corner of the page
+select settings
+select SSH and GPG keys
+select New SSH Key
+Enter a title
+Paste your public keys
+Click Add SSH button
+
+
+
+
+to exit, run:
+exit
+
+to get back in:
+find connect statement in AWS again

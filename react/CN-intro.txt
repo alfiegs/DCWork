@@ -1,0 +1,44 @@
+REACT NOTES
+
+
+
+MVC Architecture
+Model - View - Controller
+
+separates front and back end functions
+
+
+React is front end library - the V in the MVC architecture
+
+
+
+class vs function
+
+classes store information, functions execute information and end
+
+
+
+
+
+MAKE AN APP
+html file
+
+add script tags to end of body
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+
+import in react library with import
+
+npm install -g create-react-app: one time install
+every time you do a new react project: npm create-react-app
+
+create-react-app my-app  --no capitals, yes dashes or underscores (my-app is name of folder you want to make)
+creates new folder called my-app
+
+
+npm start --> to run app
+
+
+downloaded Chrome extension called React Developer Tools
+-debugging tools and shows you what technology a website uses

@@ -109,6 +109,7 @@ let user = db.user;
 // //returns all items in ASCending order with offset of 2
 // user.findAll({offset: 2, order:[['lastName', 'ASC']]})
 // .then((results) => {
+
 //     results.forEach(record => {
 //         console.log(record.firstName, record.lastName);
 //     })
@@ -116,15 +117,36 @@ let user = db.user;
 
 
 
+//JOIN STATEMENT
+//join together task and user (include key below)
+// user.findAll({include: [{model: db.task}]})
+// .then((records) => {
+//     records.forEach(record => {
+//         console.log(record.firstName, record.lastName);
+//         record.tasks.forEach(element => {
+//             console.log(` >${element.title}`);
+//         });
+//     });
+// })
 
-//join together task and user
-user.findAll({include: [{model: db.task}]})
-.then((records) => {
+// user.findAll({include: [{model: db.task, require: false}]})
+// .then((records) => {
+//     records.forEach(record => {
+//         console.log(record.firstName, record.lastName);
+//         record.tasks.forEach(element => {
+//             console.log(` >${element.title}`);
+//         });
+//     });
+// })
+
+
+
+//FILTER WITH WHERE STATEMENTS
+//where inside include is in reference to user table. where inside of outer object is in reference to tasks
+db.task.findAll({include: [{model: db.user, require: true}], where: {id:2}})
+.then((records) => { //records = array of objects
+    // console.log(records);
     records.forEach(record => {
-        console.log(record.firstName, record.lastName);
-        record.tasks.forEach(element => {
-            console.log(` >${element.title}`);
-        });
+        console.log(record.title, record.user.firstName);
     });
-
 })
