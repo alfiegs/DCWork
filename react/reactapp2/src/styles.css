@@ -1,0 +1,26 @@
+
+.text {
+    color: red;
+    padding: 10px;
+    background-color: bisque;
+}
+
+.button{
+    padding: 20px;
+}
+
+#button-holder{
+    width: 150px;
+}
+
+.title{
+    font-size: 15px;
+}
+
+.author{
+    font-size: 10px;
+}
+
+.image{
+    width: 10vw;
+}
