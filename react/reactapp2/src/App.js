@@ -74,7 +74,7 @@ class App extends React.Component {
       //     <Button name="Alfie" />
       //   </div>
       // </Container>
-      <body>
+      <body id="body">
       <BookComponent books={this.state.books}/>
       </body>
 

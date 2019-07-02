@@ -12,13 +12,18 @@ class BookComponent extends React.Component {
     render() {
         let bookList = this.props.books.map((book)=>{
             let url = "https://raw.githubusercontent.com/benoitvallon/100-best-books/master/static/"
+            let wikiCountry = "https://en.wikipedia.org/wiki/"
             return (
-            <Col md={6}>
-            <span class="title">Title: {book.title}</span>
+            <Col md={3}>
+            <div class="border1 box">
+            <h5>{book.title} ({book.year})</h5> 
+            <i>{book.author}</i>
             <br></br>
-            <span class="author">Author: {book.author}</span>
+            <a class="link" href={wikiCountry+book.country}>{book.country}</a>
             <br></br>
-            <img class="image" src={url+book.imageLink}></img>
+            <a href={book.link}><img class="image" src={url+book.imageLink}></img></a>
+            <div class="small-font">Pages: {book.pages}, Language: {book.language}</div>
+            </div>
             </Col>
             )
             
