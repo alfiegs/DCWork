@@ -13,7 +13,7 @@ class ProjectItem extends React.Component {
       <li>
           <strong>{this.props.project.category}</strong>
           {this.props.project.title}
-          <a href="#" onClick={this.props.onDelete}>X</a>
+          <a href="#" onClick={()=>{this.props.onDelete(this.props.project.id)}}>X</a>
       </li>
     </div>
         );

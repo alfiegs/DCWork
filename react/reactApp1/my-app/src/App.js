@@ -24,10 +24,13 @@ class App extends React.Component {
     });
   }
 
+  
+
   render() {
     return (
       <div>
         <button onClick={(e)=>{this.handleButtonClick(e)}}>{this.state.counter}</button>
+        <button onClick={(e)=>{this.handleButtonClick(e)}}>{this.state.counter2}</button>
         <button onClick={(e)=>{this.handleButtonClick(e)}}>{this.state.counter2}</button>
         <button>{this.state.counter}</button>
       </div>

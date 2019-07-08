@@ -49,7 +49,7 @@ handleDeleteProject = (id) => {
   oldProjects.splice(index, 1)
   this.setState({
     projects: oldProjects
-  })
+  }) 
 }
 
 
