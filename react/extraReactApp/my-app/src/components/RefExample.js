@@ -7,23 +7,29 @@ class RefExample extends React.Component {
         this.state = {
             title: '',
             firstName: '',
-            value: ''
         }
         
     }
 
-    onSubmitHandler = () => {
+
+    onSubmitHandler = (e) => {
+        e.preventDefault()
         window.alert('Form Submitted')
+        this.setState({
+            title: this.refs.title.value,
+            firstName: this.refs.firstName.value,
+        })
     }
 
     onChangeHandler = (e) => {
-        let name = e.target.name
+        // let name = e.target.name;
+        // let v = e.target.type = 'checkbox' ? e.target.checked : e.target.value
         this.setState({
-            [name]: e.target.value
-        }, ()=>{
-            // console.log(e.target.value)
+            title: this.state.title.value
         })
     }
+
+
 
     render() {
         return (
@@ -31,31 +37,17 @@ class RefExample extends React.Component {
             <form onSubmit={this.onSubmitHandler}>
                 {this.state.title} <br />
                 {this.state.firstName} <br />
+                {this.state.value} <br />
                 <label>Title</label>
-                <input type="text" name="title" onChange={this.onChangeHandler}></input>
+                <input type="text" name="title" ref='title'></input>
                 <br />
                 <label>First Name</label>
-                <input type="text" name="firstName" onChange={this.onChangeHandler}></input>
-                <br />
-                <select value={this.state.value} onChange={this.onChangeHandler}>
-                    <option value="grapefruit">Grapefruit</option>
-                    <option value="lime">Lime</option>
-                    <option value="coconut">Coconut</option>
-                    <option value="mango">Mango</option>
-                </select>
-                <br />
-                <label>
-                    Is going:
-                    <input
-                        name="isGoing"
-                        type="checkbox"
-                        checked={this.state.isGoing}
-                        onChange={this.handleInputChange} />
-                </label>
+                <input type="text" name="firstName" ref='firstName' ></input>
                 <br />
                 <button>Submit</button>
             </form>
             </>
+
         );
     }
 }

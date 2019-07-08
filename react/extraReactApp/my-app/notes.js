@@ -34,3 +34,14 @@
 
 
 // REFS
+
+
+
+
+//HOOKS
+//provide state to a stateless component
+//https://reactjs.org/docs/hooks-intro.html
+//creating "state" in a functional component
+//import from React:
+    //import React, {useState} from 'react';
+//e.g., let [count, setCount] = useState(0)
