@@ -1,0 +1,159 @@
+JavaScript Interview Questions
+https://dc-houston.herokuapp.com/Algorithm/IntervewQuestions.html#1
+From the book:
+JavaScript OO Interview Questions
+
+
+2. What is Object Oriented Programming?
+    Functional vs OOP
+    OOP represents code in objects - makes it easier for non-developer clients to
+    understand.
+    Functions don't translate into the real world, OOP mirrors the real world more accurately.
+    OOP organizes code into objects, which is a more natural way of representing the world.
+
+    classes, objects, inheritance, behavior (methods)
+    abstraction, inheritance, polymorphism, encapsulation
+
+    inheritance - parent has children that inherit properties and functions from parent
+    polymorphism - same rules, different results
+
+3. What are classes?
+    Templates for objects. Instances of objects are created from a class template.
+    A class is instantiated with a constructor.
+        class Person {
+            constructor(fName, lName, city){
+                this.fName = fName;
+                this.lName = lName;
+                this.city = city;
+            }
+        }
+    An object instance of a class is instantiated with "new ClassName"
+        let person1 = new Person ("Alfie", "Santos", "Houston")
+
+1. What makes JS an OOP?
+    It has inheritance, encapsulation, polymorphism, etc.
+    
+4. What is an Object or Instance?
+    A concrete instance of a Class. 
+    Memory allocation of a Class. Assigning values and data to the Class template.
+
+5. What is the difference between JS and other OOPs (Python)?
+    JS is a prototypical language, based on prototypes.
+    Prototype is a linked list that links to a list, a way of creating inheritance
+    through linked lists.
+
+6. What is the easiest way to define an Object in JS?
+    let objectName = {}
+
+7. How do you add a property to an Object?
+    key value pairs
+    let objectName = {name: "Alfie", last: "Santos"}
+
+8. How do you delete an Object property?
+    let objectName = {name: "Alfie", last: "Santos"}
+    delete objectName.last  >> deletes last:"Santos"
+
+9. How do you access properties in JS?
+    objectName.key
+    or
+    objectName['birth place']
+
+**10. What will happen if an object name starts with a number?
+
+
+
+11. How do you access properties with a space? (e.g. "birth date")
+    objectName['birth date']
+
+** 12. What is a primitive type?
+    most basic data type
+    number, string, boolean, null, undefined, symbol (ES2015)
+    undefined = 
+    null = 
+
+13. Can an object be a primative type?
+    ??
+
+14. What is the typeOf operater used for?
+    determine data type
+
+15. Are functions objects in Javascript?
+    yes
+
+16. Can functions be chained in Javascript?
+    yes
+    let myString = "this is a great day"
+    let reverseString = myString.split(' ').reverse() >> split the string with a reverse chained on
+
+17. How do you invoke a function in Javascript?
+    functionName() >> function name with parentheses
+
+**18. What is an inner function in Javascript?
+
+19. Explain a callback in Javascript.
+    JS is asynchrenous, 
+    single-threaded = only one processing chain
+        cant split up processing power in JS
+    callbacks get around single-threaded, asynchrenous nature by putting the
+    function on the event loop. Computer reads rest of code and then when 
+    function on event loop is ready, it goes back to that function.
+    Computer executes function on event loop whenever its ready instead of waiting 
+    until the function is ready and not executing rest of code
+
+20. What are the different ways that you can call a function?
+    functionName()
+    button.addEventListener('click', functionName)
+
+**21. What scope does JS have?
+    Functional
+
+**22. What is hoisting and how does it work?
+
+23. What is a "let" variable, introduced in ES6
+    "let" is block-scope - after block of code is executed, variable dies
+    "var" is global-scope
+
+24. What happens if a "var" or "let" keyword is not defined before a variable?
+    e.g.  a = 4 (no var or let)
+    -becomes global variable in all modules
+
+25. What is closure in javascript?
+    after you execute a function and get a return, it usually dies, but if there is a setTimeOut or some function
+    that hasn't completed yet, the function is not yet dead
+    closure means long after you've executed outer function, you can still access inner function
+    used to build libraries
+    e.g. jQuery - library remains accessible 
+
+
+26. What is the "new" keyword in javascript?
+    how you instantiate an object based on a class
+
+27. What is a prototype?
+    JS way of creating inheritance, relationships between objects - children inherit properties and behavior
+    from parents. 
+
+28. Give an example of a prototype.
+
+29. Explain a prototype chain.
+    Like a linked list that allows you to access object all the way at the bottom
+
+**30. What does slice do if no argument is passed?
+
+**31. What is the keyword "extends"?
+
+32. What is Syntatic Sugar in Harmony (ES 6)
+    Class keyword, e.g. - makes it look like JS is not prototypical chain and more like a typical OOP
+    making it look like something else with fancy syntax
+
+33. Names some changes that were made from ES5 to ES6.
+
+
+
+
+
+
+
+
+
+
+

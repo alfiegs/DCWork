@@ -1,0 +1,39 @@
+
+
+
+>> Interview questions (e.g. JavaScript interview questions) should be covered
+    little by little, every day (e.g. 5 per day at the start of class).
+    Questions should be answered as soon as the concepts are covered in class
+    and then reviewed again when the topic is finished,
+    and again at a later date.
+
+
+>> Class organization
+    Classes should be organized so that they are regular and predictable
+    (class starts at exact same time every day (9:15), breaks at regular times (e.g. every hour), 
+    lunch at regular times (e.g. 12:15 - 1:15), evenly spaced periods 
+    of instruction time, homework time starts at same time, etc.)
+    >> Class elements:
+        -warm up
+        -algorithm
+        -interview questions
+        -main topic
+
+
+>> Content Presentation
+    -Every day there should be a lesson plan with clearly defined objectives
+    -All of the exercises/presentations should be prepared and practiced in advance
+        so that there is minimal confusion, bugs in code, etc.
+    -students should be able to follow along in class, so the pace of instruction should
+        be slow enough to accommodate all students
+    -content should be recorded and made accessible to all students
+    
+
+>> Homework
+    -Class material should fully prepare students to complete HW and HW should be relevant to what
+    was covered in class. No surprises in HW.
+    -HW should be checked and recorded every day, a list should be made of assignments completed
+    or not completed and the list should be easily accessible.
+    -some minimal feedback should be given, or more if needed
+
+
