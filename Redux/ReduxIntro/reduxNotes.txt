@@ -1,0 +1,23 @@
+Redux Notes
+
+
+import Redux minified version on this page:
+https://cdnjs.com/libraries/redux
+Here is the link:
+https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.3/redux.min.js
+
+paste link in script tag in body of HTML document:
+
+<body>
+<script sr="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.3/redux.min.js"></script>
+</body>
+</html>
+
+
+
+
+Create Store
+    <script>
+        //creating Redux store
+        let store = Redux.createStore()
+    </script>

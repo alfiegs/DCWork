@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Redux Counter</title>
+</head>
+<body>
+    
+    Redux Counter
+
+
+    <!-- import Redux cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.3/redux.min.js"></script>
+    <!-- Redux import goes above other script tags -->
+    <script>
+        //creating actions (above store) (action is an object, action creator is function that returns object)
+
+        //action creator (function)
+        function increment(){
+            //action returned (object)
+            return {
+                type: "ADD", //labeling event type
+                }
+            }
+        
+
+
+
+        //state initializer
+        let initialState = {
+            count: 0
+        }
+
+        function reducer(state, action){
+            if(state === undefined){ //if state doesn't exist yet, initialize it with initial state
+                state = initialState;
+            }
+            if(action.type == "ADD"){
+                //return new state
+                return {
+                    ...state,
+                    count: state.count + 1
+                }
+        }
+    }
+
+
+
+        //creating Redux store
+        //reducer function passed into createStore function as argument
+        let store = Redux.createStore(reducer)
+
+        store.subscribe(showState)
+        
+        function showState(){
+            console.log(store.getState())
+        }
+
+        store.dispatch(increment());
+        store.dispatch(increment());
+        store.dispatch(increment());
+        store.dispatch(increment());
+
+    </script>
+</body>
+</html>
